@@ -126,6 +126,6 @@ margin:40px;
     cursor: pointer;
     background-color: var(--light);
     filter:none;
-    transition:.2s;
+      transition:.2s;
     outline:none;
 }
