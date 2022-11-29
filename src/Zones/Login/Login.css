@@ -1,0 +1,131 @@
+@import '../../sass/font/font.scss';
+@import "../../sass/rootcolors/colors.scss";
+
+.login-main-div{
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top:40px;
+
+}
+.login-div
+{
+border-radius: 10px;
+border:2px solid var(--black);
+background-color: var(--medium);
+display: flex;
+justify-content: center;
+align-items: flex-start;
+width: 70%;
+height: 400px;
+}
+.login-div h3{
+color:white;
+transition: .4s;
+}
+.login-container:hover h3
+{
+text-shadow: 0 0 16px white;
+transition: .4s;
+}
+.signup-container:hover h3
+{
+text-shadow: 0 0 16px white;
+transition: .4s;
+}
+.login-container
+{
+padding:10px;
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+}
+.signup-container
+{
+margin:10px;
+border-left: 1px solid var(--black);
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+}
+
+.login-main-div input
+{
+transition: .2s;
+border:none;
+border-radius: 5px;
+padding:5px;
+border:2px solid var(--light);
+background-color: var(--medium);
+height: 14px;
+text-align: center;
+color:white;
+}
+.login-main-div input:focus
+{
+transition: .2s;
+outline: none;
+height:20px;
+margin-top:10px;
+}
+.login-div p
+{
+color:white;
+background-color: var(--medium);
+position: absolute;
+margin-top:-10px;
+margin-left:40px;
+font-weight: bold;
+}
+.login-container li{
+display:block;
+margin:40px;
+}
+.login-container li:nth-child(1)
+{
+    display: flex;
+    justify-content: center;
+}
+.login-container li:nth-child(6)
+{
+    display: flex;
+    justify-content: center;
+}
+.signup-container li{
+display:block;
+margin:40px;
+}
+.signup-container li:nth-child(1)
+{
+    display: flex;
+    justify-content: center;
+}
+.login-div button{
+    padding:10px;
+    border:1px solid black;
+    background-color: var(--medium);
+    border-radius: 10px;
+    transition:.2s;
+}
+.login-div button:hover{
+    cursor: pointer;
+    background-color: var(--light);
+    filter:drop-shadow(0 2px 4px black);
+    transition:.2s;
+}
+.login-div button:focus{
+    cursor: pointer;
+    background-color: var(--light);
+    filter:drop-shadow(0 2px 4px black);
+    transition:.2s;
+    outline:none;
+}
+.login-div button:active{
+    cursor: pointer;
+    background-color: var(--light);
+    filter:none;
+    transition:.2s;
+    outline:none;
+}

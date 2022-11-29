@@ -1,0 +1,42 @@
+@import '../sass/font/font.scss';
+@import "../sass/rootcolors/colors.scss";
+*{
+font-family: ubuntu-light;
+}
+
+.topheader{
+background:linear-gradient(to bottom, var(--medium), var(--dark));
+color:white;
+display:flex;
+justify-content: space-between;
+align-items: center;
+padding:12px;
+}
+.toptitle h1{
+font-family: ubuntu-italic;
+text-shadow: 0 0 10px white;
+}
+
+.topmenu{
+display:flex;
+justify-content: space-evenly;
+}
+
+.topmenu a{
+text-decoration: none;
+color:white;
+font-size: 20px;
+}
+
+.topmenu a:hover{
+text-shadow: 0 0 10px white;
+text-decoration:underline;
+}
+
+.dropdown button{
+border:1px solid white;
+padding:4px;
+border-radius: 5px;
+background-color: transparent;
+color:white;
+}

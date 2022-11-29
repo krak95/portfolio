@@ -1,0 +1,29 @@
+@import '../../sass/font/font.scss';
+@import "../../sass/rootcolors/colors.scss";
+
+.Screenstat{
+    position: fixed;
+    bottom:0;
+    left:0;
+    margin:20px;
+    border-radius: 10px;
+    border:2px solid var(--dark);
+    padding:20px;
+    background-color: var(--medium);
+}
+.ledOn
+{
+border:2px solid var(--dark);
+width: 20px;
+height: 20px;
+background-color: var(--green);
+border-radius: 50%;
+}
+.ledOff
+{
+border:2px solid var(--dark);
+width: 20px;
+height: 20px;
+background-color: var(--red);
+border-radius: 50%;
+}
