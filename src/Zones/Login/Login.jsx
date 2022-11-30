@@ -25,7 +25,7 @@ return (
 <div className="login-div">
 <div className='login-container'>
 <ol>
-<li><h3>Login</h3></li>
+<li><h2>Login</h2></li>
 <p>Username</p>
 <li><input type="text" onChange={(e)=>setUname(e.target.value)}/>   </li>
 <p>Password</p>
@@ -35,7 +35,7 @@ return (
 </div>
 <div className='signup-container'>
 <ol>
-<li><h3>Signup</h3></li>
+<li><h2>Signup</h2></li>
 <p>Username</p>
 <li><input type="text" onChange={(e)=>setUname(e.target.value)}/>   </li>
 <p>Password</p>
