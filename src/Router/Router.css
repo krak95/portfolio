@@ -5,7 +5,7 @@ font-family: ubuntu-light;
 }
 
 .topheader{
-background:linear-gradient(to bottom, var(--medium), var(--dark));
+background:linear-gradient(to bottom, var(--light), var(--medium));
 color:white;
 display:flex;
 justify-content: space-between;
