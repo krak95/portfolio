@@ -1,7 +1,7 @@
 @import '../../sass/font/font.scss';
 @import "../../sass/rootcolors/colors.scss";
 body{
-    background-color: var(--grey3);
+    background-color: white;
 }
 .login-main-div{
 display: flex;
@@ -38,49 +38,42 @@ width: 100%;
 .login-container ol
 {
     transition:0.2s;
-    border:2px solid var(--medium);
+    border:1px solid var(--medium);
 border-radius: 10px;
-background-color: var(--grey2);
+background-color: var(--grey3);
 }
 .signup-container ol
 {
     transition:0.2s;
-    border:2px solid var(--medium);
+    border:1px solid var(--medium);
 border-radius: 10px;
-background-color: var(--grey2);
+background-color: var(--grey3);
 }
 .login-container ol:hover
 {
     transition:0.2s;
-    box-shadow: 0 4px 12px var(--grey1);
+    border:1px solid var(--light);
+    box-shadow: 0 4px 12px var(--grey1), 0 2px 8px var(--light);
 }
 .signup-container ol:hover
 {
     transition:0.2s;
-    box-shadow: 0 4px 12px var(--grey1);
+    border:1px solid var(--light);
+    box-shadow: 0 4px 12px var(--grey1), 0 2px 8px var(--light);
 }
 .login-div h2{
-color:white;
-transition: .4s;
-}
-.login-container:hover h2
-{
-text-shadow: 0 0 16px white;
-transition: .4s;
-}
-.signup-container:hover h2
-{
-text-shadow: 0 0 16px white;
+color:var(--dark);
 transition: .4s;
 }
 .login-main-div input
 {
+
 transition: .2s;
 border:none;
 border-radius: 5px;
 padding:5px;
-border:2px solid var(--dark);
-background-color: var(--grey2);
+border:1px solid var(--dark);
+background-color: var(--grey3);
 height: 14px;
 text-align: center;
 color:white;
@@ -97,11 +90,11 @@ margin-top:10px;
 }
 .login-div p
 {
-color:white;
-background-color: var(--grey2);
+color:var(--dark);
+background-color: var(--grey3);
 position: absolute;
 margin-top:-10px;
-margin-left:50px;
+margin-left:52px;
 font-weight: bold;
 }
 .login-container li{

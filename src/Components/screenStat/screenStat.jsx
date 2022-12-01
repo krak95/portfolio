@@ -1,7 +1,9 @@
 import "./screenStat.css"
 import React from 'react';
+import UserInfo from "../userInfo/userInfo";
 
 function Screenstat() {
+
 const Offline = () =>{
 return (
 <>
@@ -22,6 +24,7 @@ if(user === null){
 return (
 <>
 <div className="Screenstat">
+<UserInfo/>
 <Offline/>
 <div className="ledOff"></div>
 </div>
@@ -31,6 +34,7 @@ return (
 return(
 <>
 <div className="Screenstat">
+<UserInfo/>
 <Online/>
 <div className="ledOn"></div>
 </div>

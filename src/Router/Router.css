@@ -1,9 +1,9 @@
 @import '../sass/font/font.scss';
 @import "../sass/rootcolors/colors.scss";
 *{
-font-family: ubuntu-light;
+    font-family: ubuntu-light;
+    letter-spacing:1px;
 }
-
 .topheader{
 background:linear-gradient(to bottom, var(--light), var(--medium));
 color:white;
