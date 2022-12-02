@@ -21,7 +21,7 @@ const user1 = {
         const usertoken = {runame, rpwd}
         const jwt = require('jsonwebtoken')
         require('dotenv').config()
-        const accesstoken = jwt.sign(usertoken, process.env.jwToken, {expiresIn: "2s"})
+        const accesstoken = jwt.sign(usertoken, process.env.jwToken, {expiresIn: "1000s"})
 
         if((runame === user.name && rpwd === user.pwd) || (runame === user1.name && rpwd === user1.pwd)){
             console.log('corret')

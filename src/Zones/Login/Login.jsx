@@ -2,6 +2,7 @@ import React, { useState,useContext } from 'react';
 import {AuthContext} from "./../../API/Controller/loginController"
 import Screenstat from '../../Components/screenStat/screenStat';
 import "./Login.css"
+import UserWindow from '../../Components/userWindow/userWindow';
 
 function Login() {
 const {authenticated,login,logout} = useContext(AuthContext);
@@ -29,10 +30,13 @@ return (
 <ol>
 <form onSubmit={handleForm}>
 <li><h2>Login</h2></li>
+<label>
 <p>Username</p>
-<li><input type="text" onChange={(e)=>setUname(e.target.value)}/>   </li>
-<p>Password</p>
+<li><input type="text" onChange={(e)=>setUname(e.target.value)}/></li>
+</label> 
+<label><p>Password</p>
 <li><input type="password" onChange={(e)=>setPwd(e.target.value)}/></li>
+</label>
 <li><button>Submit</button></li>
 </form>
 </ol>
@@ -40,14 +44,22 @@ return (
 <div className='signup-container'>
 <ol>
 <li><h2>Signup</h2></li>
+<label>
 <p>Name</p>
 <li><input type="text" onChange={(e)=>setFname(e.target.value)}/>   </li>
+</label>
+<label>
 <p>Email</p>
 <li><input type="password" onChange={(e)=>setEmail(e.target.value)}/></li>
+</label>
+<label>
 <p>Username</p>
 <li><input type="password" onChange={(e)=>setUname(e.target.value)}/></li>
+</label>
+<label>
 <p>Password</p>
 <li><input type="password" onChange={(e)=>setPwd(e.target.value)}/></li>
+</label>
 <li><button onClick={handleForm}>Submit</button></li>
 </ol>
 </div>
@@ -64,6 +76,7 @@ return(
 <div className='login-div'>
 <div className='login-contaienr'>
 <button onClick={handleLogout}>Logout</button>
+<UserWindow/>
 </div>
 </div>
 <Screenstat/>

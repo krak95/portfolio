@@ -2,14 +2,30 @@
 @import "../../sass/rootcolors/colors.scss";
 
 .Screenstat{
+    transition: .4s;
+    width: 66px;
+    height: 66px;
     position: fixed;
     bottom:0;
     left:0;
     margin:20px;
-    border-radius: 10px;
+    border-radius: 5px;
     border:2px solid var(--dark);
-    padding:20px;
     background-color: var(--medium);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.Screenstat ol{
+    transition: .1s;
+    margin:10px;
+    border-radius: 5px;
+}
+.Screenstat li{
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 .ledOn
 {
@@ -26,4 +42,25 @@ width: 20px;
 height: 20px;
 background-color: var(--red);
 border-radius: 50%;
+}
+.userwindow-open{
+    transition: .4s;
+    width: 200px;
+    height: 200px;
+}
+.userinfo{
+    display:none !important;
+}
+.userinfo-show{
+    display: block !important;
+}
+.screenlist{
+    transition: .1s;
+    background-color: var(--light);
+}
+.pState{
+    display:none !important;
+}
+.pState-show{
+    display:block !important;
 }

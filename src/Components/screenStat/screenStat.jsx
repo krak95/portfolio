@@ -24,9 +24,12 @@ if(user === null){
 return (
 <>
 <div className="Screenstat">
-<UserInfo/>
-<Offline/>
-<div className="ledOff"></div>
+<ol>
+    <li className="userinfo"><UserInfo/></li>
+    <li><Offline/></li>
+    <li><div className="ledOff"></div></li>
+
+</ol>
 </div>
 </>
 )
@@ -34,9 +37,11 @@ return (
 return(
 <>
 <div className="Screenstat">
-<UserInfo/>
-<Online/>
-<div className="ledOn"></div>
+<ol>
+<li className="pState"><Online/></li>
+<li><div className="ledOn"></div></li>    
+<li className="userinfo"><UserInfo/></li>
+</ol>
 </div>
 </>
 )
