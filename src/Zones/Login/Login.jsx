@@ -27,6 +27,7 @@ return (
 <div className='login-main-div'>
 <div className="login-div">
 <div className='login-container'>
+    <div className='aniborder'> 
 <ol>
 <form onSubmit={handleForm}>
 <li><h2>Login</h2></li>
@@ -40,6 +41,7 @@ return (
 <li><button>Submit</button></li>
 </form>
 </ol>
+</div>
 </div>
 <div className='signup-container'>
 <ol>
