@@ -22,7 +22,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "startserver": "nodemon backend/server/server.js",
+    "ss": "nodemon backend/server/server.js",
     "start": "react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

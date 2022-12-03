@@ -144,3 +144,21 @@ margin:40px;
       transition:.2s;
     outline:none;
 }
+
+.shotclock{
+    color:white;
+    background-color: black;
+    padding:10px;
+    position: fixed;
+    top:0;
+    left:0;
+}
+
+.clock{
+    color:white;
+    background-color: black;
+    padding:10px;
+    position: fixed;
+    bottom:0;
+    right:0;
+}

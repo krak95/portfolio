@@ -12,6 +12,9 @@ if(recoverUser){
 setUser(recoverUser)
 }
 },[])
+
+
+
 const login = async (uname, pwd) => {
 const session = await createSession(uname, pwd);
 const result = session.data;
@@ -21,7 +24,7 @@ localStorage.setItem('uname',uname);
 localStorage.setItem('pwd',pwd);
 localStorage.setItem('token',result);
 setUser(uname)
-    vtoken3()
+    //vtoken3()
 }
 }
 const  logout = () =>{
@@ -30,7 +33,7 @@ localStorage.removeItem('uname')
 localStorage.removeItem('pwd')
 localStorage.removeItem('token')
 console.log('bye')
-clearInterval(vtoken3)
+//clearInterval(vtoken3)
 }
 
 const vtoken = async (token) =>{
@@ -41,14 +44,15 @@ if(result === 'nok')
 {
     logout()
 }
-
 }
+let token = localStorage.getItem('token')
+vtoken(token)
 
-    const vtoken3 = setInterval(() => {
+    /*const vtoken3 = setInterval(() => {
         const token = localStorage.getItem('token')
             vtoken(token)
             console.log('interval')
-        }, 1000);
+        }, 1000);*/
 
 
 

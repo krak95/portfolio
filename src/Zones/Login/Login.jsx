@@ -1,8 +1,8 @@
-import React, { useState,useContext } from 'react';
+import React, { useState,useContext, useEffect } from 'react';
 import {AuthContext} from "./../../API/Controller/loginController"
-import Screenstat from '../../Components/screenStat/screenStat';
 import "./Login.css"
-import UserWindow from '../../Components/userWindow/userWindow';
+import Screenstat from "./../../Components/screenStat/screenStat"
+import ShotClock from '../../Components/shotClock/shotClock';
 
 function Login() {
 const {authenticated,login,logout} = useContext(AuthContext);
@@ -10,6 +10,21 @@ const [uname, setUname] = useState('');
 const [pwd, setPwd] = useState('');
 const [fname, setFname] = useState('');
 const [email, setEmail] = useState('');
+const [date, setDate] = useState('');
+
+const Clock1 = () =>{
+    let today = new Date();
+    let date1 = today.toLocaleString()
+    useEffect(()=>{
+        const interval = setInterval(() => {
+            setDate(date1)
+    }, 1000);
+    return () => clearInterval(interval)
+    },[])
+return(
+    <>{date}</>
+)
+}
 
 function handleLogout(e){
 e.preventDefault();
@@ -27,7 +42,7 @@ return (
 <div className='login-main-div'>
 <div className="login-div">
 <div className='login-container'>
-    <div className='aniborder'> 
+<div className='aniborder'> 
 <ol>
 <form onSubmit={handleForm}>
 <li><h2>Login</h2></li>
@@ -67,7 +82,6 @@ return (
 </div>
 </div> 
 </div>
-<Screenstat/>
 </>
 )
 }
@@ -76,11 +90,13 @@ else
 return(
 <>
 <div className='login-div'>
-<div className='login-contaienr'>
-<button onClick={handleLogout}>Logout</button>
-<UserWindow/>
+<div className='login-container'>
+    <div className='clock'>
+        <Clock1/>
+    </div>
 </div>
 </div>
+<ShotClock/>
 <Screenstat/>
 </>
 )
