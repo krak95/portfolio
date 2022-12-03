@@ -1,22 +1,28 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 
 const ShotClock = () =>{
     
-const [date, setDate] = useState(0)
-    
-useEffect(()=>{
+    let [date, setDate] = useState(3)
+
+    useEffect(()=>{
 //let today = new Date();
-let today = 120;
     const interval = setInterval(() => {
         //setDate(today.toLocaleString());
-        setDate(--today);
+        const countdown = --date
+        localStorage.setItem('time',countdown)
+        setDate(countdown);
+        if(countdown <= 0){
+            setDate('refresh')
+            localStorage.setItem('time',0)
+            clearInterval(interval)
+        }
 }, 1000);
 },[]);
 
 return (
 <>
-<p className="shotclock">{date}</p>
+<p   className="shotclock">{date}</p>
 </>
 )
 }
