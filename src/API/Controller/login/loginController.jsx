@@ -1,6 +1,10 @@
 import {createSession, verifyToken} from "../../Axios"
 import { useNavigate } from "react-router-dom";
 import React,{useState,createContext, useEffect} from "react";
+import {Link} from 'react-router-dom'
+import Router from "../../../Router/Router";
+import RouteAuth from "../../../Components/topmenu/topMenu";
+import $ from "jquery"
 
 export const AuthContext = createContext();
 export const AuthProvider =  ({children}) => {
@@ -13,6 +17,7 @@ setUser(recoverUser)
 }
 },[])
 
+
 const login = async (uname, pwd) => {
 const session = await createSession(uname, pwd);
 const result = session.data;
@@ -22,15 +27,21 @@ localStorage.setItem('uname',uname);
 localStorage.setItem('pwd',pwd);
 localStorage.setItem('token',result);
 setUser(uname)
-    //vtoken3()
+$('.login-route').css('display','none')
+$('.user-route').css('display','block')
+navigate("/user")
 }
 }
+
+
 const  logout = () =>{
 setUser(null)
 localStorage.removeItem('uname')
 localStorage.removeItem('pwd')
 localStorage.removeItem('token')
 console.log('bye')
+$('.login-route').css('display','block')
+$('.user-route').css('display','none')
 //clearInterval(vtoken3)
 }
 

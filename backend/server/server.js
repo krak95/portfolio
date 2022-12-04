@@ -77,15 +77,11 @@ const users = [
     })
 
     app.post('/addCart', (req,res)=>{
-        const itemadd = new Array(req.body.item)          
-        const itemadd1 = itemadd
+        const itemadd = req.body.item       
         const session = req.body.session
         console.log(session)
         if(req){
-            users.name = session
-            console.log(itemadd1)
-            console.log(users.name)
-            //users.session.push(itemadd1)
+            console.log(itemadd)
         }
     })
 

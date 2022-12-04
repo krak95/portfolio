@@ -2,6 +2,10 @@ import "./screenStat.css"
 import React,{useContext} from 'react';
 import UserInfo from "../userInfo/userInfo";
 import {AuthContext} from "./../../API/Controller/login/loginController"
+import Router from "../../Router/Router";
+import {Routes,Route,Link,Navigate} from "react-router-dom"
+import Login from "../../Zones/Login/Login";
+
 import $ from 'jquery'
 
 function Screenstat() {
@@ -17,7 +21,7 @@ const {logout} = useContext(AuthContext);
 const Offline = () =>{
 return (
 <>
-<h3>Offline</h3>
+<h3>Login</h3>
 </>
 )
 }
@@ -53,6 +57,7 @@ return(
 <li className="pState"><Online/></li>
 <li><div className="ledOn"></div></li>    
 <li className="userinfo"><UserInfo/></li>
+
 </ol>
 </div>
 </>

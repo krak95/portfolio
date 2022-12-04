@@ -2,7 +2,9 @@ import React, { useState,useContext, useEffect } from 'react';
 import {AuthContext} from "./../../API/Controller/login/loginController"
 import "./Login.css"
 import Screenstat from "./../../Components/screenStat/screenStat"
-import {ShotClock} from '../../Components/shotClock/shotClock';
+import {ShotClock} from './../../Components/shotClock/shotClock';
+import RouteAuth from '../../Components/topmenu/topMenu';
+import Router from '../../Router/Router';
 
 function Login() {
 const {authenticated,login,logout} = useContext(AuthContext);
@@ -82,6 +84,7 @@ return (
 </div>
 </div> 
 </div>
+<Screenstat/>
 </>
 )
 }
@@ -98,6 +101,7 @@ return(
 </div>
 <ShotClock/>
 <Screenstat/>
+
 </>
 )
 }
