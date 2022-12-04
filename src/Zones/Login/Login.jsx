@@ -1,8 +1,8 @@
 import React, { useState,useContext, useEffect } from 'react';
-import {AuthContext} from "./../../API/Controller/loginController"
+import {AuthContext} from "./../../API/Controller/login/loginController"
 import "./Login.css"
 import Screenstat from "./../../Components/screenStat/screenStat"
-import ShotClock from '../../Components/shotClock/shotClock';
+import {ShotClock} from '../../Components/shotClock/shotClock';
 
 function Login() {
 const {authenticated,login,logout} = useContext(AuthContext);

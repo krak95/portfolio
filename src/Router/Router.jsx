@@ -2,8 +2,9 @@ import React,{useContext} from "react"
 import {Routes,Route,Link,Navigate} from "react-router-dom"
 import Home from "../Zones/Home/Home"
 import Login from "../Zones/Login/Login"
+import Shop from "../Zones/Shop/Shop"
 import "./Router.css"
-import { AuthContext, AuthProvider } from "./../API/Controller/loginController"
+import { AuthContext, AuthProvider } from "./../API/Controller/login/loginController"
 
 function Router(){
 
@@ -28,6 +29,7 @@ function Router(){
 </div>
 <div className='topmenu'>
 <Link to="/">  Home</Link>
+<Link to="/shop">  Shop</Link>
 <Link to="/login"> Login</Link>
 <div className="dropdown"><button>Dropdown</button></div>
 </div>
@@ -37,6 +39,7 @@ function Router(){
 <Routes>
 <Route path="/"     element={<Private><Home/></Private>}  />
 <Route exact path="login" element={<Login/>} />
+<Route exact path="shop" element={<Shop/>} />
 </Routes>
 </AuthProvider>
         </>

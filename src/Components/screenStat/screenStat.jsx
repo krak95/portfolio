@@ -1,7 +1,7 @@
 import "./screenStat.css"
 import React,{useContext} from 'react';
 import UserInfo from "../userInfo/userInfo";
-import {AuthContext} from "./../../API/Controller/loginController"
+import {AuthContext} from "./../../API/Controller/login/loginController"
 import $ from 'jquery'
 
 function Screenstat() {

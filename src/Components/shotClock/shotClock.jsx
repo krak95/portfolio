@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 
-const ShotClock = () =>{
+export const ShotClock = () =>{
     
     let [date, setDate] = useState(3)
 
@@ -26,5 +26,3 @@ return (
 </>
 )
 }
-
-export default ShotClock

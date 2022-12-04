@@ -9,14 +9,14 @@ const users = [
     {
         'name':'jose',
         'pwd':'jose',
+        'cart':[],
     },
     {
         'name':'user1',
         'pwd':'user1',
+        'cart':[],
     }
 ]
-
-
 
 
     app.post('/login',  (req,res)=> {
@@ -25,7 +25,7 @@ const users = [
         const usertoken = {runame, rpwd}
         const jwt = require('jsonwebtoken')
         require('dotenv').config()
-        const accesstoken = jwt.sign(usertoken, process.env.jwToken, {expiresIn: "120s"})
+        const accesstoken = jwt.sign(usertoken, process.env.jwToken, {expiresIn: "1120s"})
         console.log('logintry')
         if(users.find(user => user.name === runame)  && users.find(user => user.pwd === rpwd) ){
             console.log('corret')
@@ -53,6 +53,41 @@ const users = [
         })
     })
 
+    const items = [
+        {
+            id:0,
+            name:'apple',
+            price:'10'
+        },
+        {
+            id:1,
+            name:'banana',
+            price:'10'
+        },
+        {
+            id:2,
+            name:'orange',
+            price:'10'
+        }
+    ]
+    app.get('/getShop', (req,res)=>{
+        if(req){
+            res.send(items)
+        }
+    })
+
+    app.post('/addCart', (req,res)=>{
+        const itemadd = new Array(req.body.item)          
+        const itemadd1 = itemadd
+        const session = req.body.session
+        console.log(session)
+        if(req){
+            users.name = session
+            console.log(itemadd1)
+            console.log(users.name)
+            //users.session.push(itemadd1)
+        }
+    })
 
 
 

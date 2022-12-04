@@ -1,4 +1,4 @@
-import {createSession, verifyToken} from "./../Axios"
+import {createSession, verifyToken} from "../../Axios"
 import { useNavigate } from "react-router-dom";
 import React,{useState,createContext, useEffect} from "react";
 
@@ -12,8 +12,6 @@ if(recoverUser){
 setUser(recoverUser)
 }
 },[])
-
-
 
 const login = async (uname, pwd) => {
 const session = await createSession(uname, pwd);

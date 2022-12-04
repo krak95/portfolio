@@ -1,0 +1,35 @@
+@import '../../sass/font/font.scss';
+@import "../../sass/rootcolors/colors.scss";
+
+.shop-div{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding:10px;
+}
+.shop-container{
+    padding:10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.shop-container table{
+    background-color: var(--light2);
+    text-align: center;
+    border-collapse: separate;
+    border-spacing:0 10px;
+    border:1px solid black;
+    border-radius: 10px;
+    padding:10px;
+}
+.shop-container td, th{
+    transition: .3s;
+    padding:15px;
+    border-bottom:1px solid var(--medium);
+}
+.shop-container td:nth-child(3):hover{
+    transition: .3s;
+    background-color: var(--light);
+    border-radius: 10px;
+    cursor: pointer;
+}
