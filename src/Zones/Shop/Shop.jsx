@@ -17,7 +17,7 @@ return (
 <th>Name</th>
 <th>Price</th>
 </tr>
-<Items/>
+        <Items/>
 </tbody>
 </table>
 </div>

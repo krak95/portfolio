@@ -7,6 +7,8 @@ import Calculator from "../Zones/Calculator/Calculator"
 import User from "../Zones/User/User"
 import "./Router.css"
 import { AuthContext, AuthProvider } from "./../API/Controller/login/loginController"
+import RouteAuth from "../Components/topmenu/topMenu"
+import $ from "jquery"
 
 function Router(){
     const Forbidden = ({children}) => {
@@ -18,12 +20,19 @@ function Router(){
       
         if(!authenticated){ 
           return <Navigate to = "/login"/>;
-        } 
+        }   
         return children;
       };
-
 const store = localStorage.getItem('uname')
-
+    if(store == null){
+      $('.login-route').css('display','block')
+      $('.user-route').css('display','none')
+      console.log('off')
+      }else{
+      $('.login-route').css('display','none')
+      $('.user-route').css('display','block')
+      console.log('on')
+  }
     return (
         <>
 <div className='topheader'>
@@ -32,20 +41,21 @@ const store = localStorage.getItem('uname')
 </div>
 <div className='topmenu'>
 <Link to="/">  Home</Link>
-<Link className="login-route" to="/login"> Login</Link>
-<Link className="user-route" to="/user"> User</Link>
+<Link className={store === null ? "login-route show" : "login-route hide"} to="/login"> Login</Link>
+<Link className={store === null ? "user-route hide" : "user-route show"} to="/user"> User</Link>
+<RouteAuth/>
 
-<Link to="/shop">  Shop</Link>
-<Link to="/calculator"> Calculator</Link>
+<Link to="/shop">Shop</Link>
+<Link to="/calculator">Calculator</Link>
 <div className="dropdown"><button>Dropdown</button></div>
 </div>
 </div>
 <AuthProvider>
 <Routes>
-<Route path="/"     element={<Home/>}  />
+<Route path="/" element={<Home/>}  />
 <Route exact path="login" element={<Login/>}/>
 <Route exact path="user" element={<Forbidden><User/></Forbidden>}/>
-<Route exact path="shop" element={<Shop/>} />
+<Route exact path="shop" element={<Shop/>}/>
 <Route exact path="calculator" element={<Calculator/>} />
 </Routes>
 </AuthProvider>

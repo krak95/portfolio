@@ -1,10 +1,7 @@
 import "./screenStat.css"
 import React,{useContext} from 'react';
-import UserInfo from "../userInfo/userInfo";
+import UserInfo from "./../userInfo/userInfo";
 import {AuthContext} from "./../../API/Controller/login/loginController"
-import Router from "../../Router/Router";
-import {Routes,Route,Link,Navigate} from "react-router-dom"
-import Login from "../../Zones/Login/Login";
 
 import $ from 'jquery'
 

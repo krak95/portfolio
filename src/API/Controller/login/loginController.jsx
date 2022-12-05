@@ -2,8 +2,6 @@ import {createSession, verifyToken} from "../../Axios"
 import { useNavigate } from "react-router-dom";
 import React,{useState,createContext, useEffect} from "react";
 import {Link} from 'react-router-dom'
-import Router from "../../../Router/Router";
-import RouteAuth from "../../../Components/topmenu/topMenu";
 import $ from "jquery"
 
 export const AuthContext = createContext();

@@ -6,7 +6,6 @@ const Items = () =>{
     const handleAddtocart = (item) => () =>{
     const session = localStorage.getItem('uname')
     addtocart(item,session)
-    console.log("handle",item,session)
 
 }
 
@@ -15,7 +14,6 @@ const getshop = async () =>{
 const getshop = await getShop()
 const result = getshop.data
 setItems(result)
-console.log('results',result)
 }
 
 useEffect(()=>{

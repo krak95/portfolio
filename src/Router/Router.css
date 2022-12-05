@@ -41,9 +41,9 @@ background-color: transparent;
 color:white;
 }
 
-.login-route{
+.show{
 display:block;
 }
-.user-route{
+.hide{
     display:none;
 }
