@@ -8,7 +8,7 @@ const Items = () =>{
 const handleAddtocart = (item) => () =>{
 const session = localStorage.getItem('uname')
 addCart(item,session)
-$('.cart-div tbody').append("<tr><td>"+item.name+"</td>td>"+item.price+"</td></tr>")
+$('.cart-div tbody').append("<tr><td>"+item.name+"</td><td>"+item.price+"</td></tr>")
 let len = $('.cart-div tr').length;
 $('.nrofitems p').text(len)
 }
@@ -26,7 +26,7 @@ getshop()
 
 return(
 items.map((item) =>(
-<tr key={item.id}>
+<tr  key={item.id}>
 <td>{item.name}</td>
 <td>{item.price}</td>
 <td key={item} onClick={handleAddtocart(item)}>Add</td>
