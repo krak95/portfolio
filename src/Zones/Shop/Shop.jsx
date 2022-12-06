@@ -3,8 +3,6 @@ import Items from '../../API/Controller/shop/shopController';
 
 function Shop() {
 
-
-
 return (
 <>
 <div className="shop-div">
@@ -17,12 +15,11 @@ return (
 <th>Name</th>
 <th>Price</th>
 </tr>
-        <Items/>
+<Items/>
 </tbody>
 </table>
 </div>
 </>
 )
 }
-
 export default Shop

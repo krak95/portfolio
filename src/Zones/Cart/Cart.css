@@ -1,0 +1,36 @@
+@import '../../sass/font/font.scss';
+@import "../../sass/rootcolors/colors.scss";
+
+.cart-div{
+    background-color: var(--medium);
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top:70px;
+    right:10px;
+    transition: 0.3s;
+}
+.cart-div table{
+    display:none;
+}
+
+.cart-open{
+    right:0;
+    top:0;
+    height:100%;
+    width: 15%;
+    border-radius: 0;
+    transition: 0.3s;
+}
+
+.cart-tableopen{
+    display:block !important;
+}
+
+.cart-nrofitemshide{
+    display:none !important;
+}
