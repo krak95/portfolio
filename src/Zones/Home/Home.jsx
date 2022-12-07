@@ -20,11 +20,7 @@ const handleAddTodo = () =>{
 
 return (
 <>
-<TodoList todos={todos}/>
-<input ref={todoNameRef} type="text" />
-<button onClick={handleAddTodo}>Add todo</button>
-<button>Clear todo</button>
-<div>0 left</div>
+<h1>Home</h1>
 </>
 )
 }

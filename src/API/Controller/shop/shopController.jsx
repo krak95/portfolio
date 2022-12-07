@@ -1,16 +1,19 @@
-import React,{useEffect, useState} from "react";
+import React,{useEffect, useState, useRef} from "react";
 import {getShop} from "../../Axios"
 import {cart} from "./addtoCart"
 import Cart,{addtocart} from "../../../Zones/Cart/Cart";
 import $ from "jquery"
 
-const Items = () =>{
-    
+
+function Items(){
         const [cartitem, setCartitem] = useState([])
-        const handleAddtocart = (item) => () =>{
-            setCartitem(item.name)
-            console.log('handle this: ',item.name)
+        const handleAddtocart =(e, item)=>{
+            setCartitem(prevItems => {
+                return [...prevItems,item]
+            })
+            console.log(item)
         }
+        console.log(cartitem)
 
 
 /*const handleAddtocart = (item) => () =>{
@@ -33,13 +36,15 @@ getshop()
 },[])
 
 return(
-items.map((item) =>(
+<>
+{items.map((item) =>(
 <tr  key={item.id}>
 <td>{item.name}</td>
 <td>{item.price}</td>
-<td key={item} onClick={handleAddtocart(item)}>Cart</td>
+<td onClick={e => handleAddtocart(e, item)}>Cart</td>
 </tr>
-))
+))}
+</>
 )
 }
 
