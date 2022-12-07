@@ -14,7 +14,7 @@ export const getShop = async () => {
     return api.get("/getShop");
 }
 export const addCart = async (item,session) => {
-    console.log('axios',item,session)
+    console.log('axios',item.name,session)
     return api.post("/addCart",{item,session});
 }
 

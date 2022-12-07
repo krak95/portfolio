@@ -1,8 +1,10 @@
 import "./Cart.css"
 import $ from "jquery"
+import {cart} from './../../API/Controller/shop/addtoCart'
+import {addCart} from './../../API/Axios'
 
-function Cart(){
 
+const Cart=()=>{
     const opencart = ()=>{
         $('.cart-div').addClass('cart-open')
         $('.cart-div table').addClass('cart-tableopen')
@@ -20,9 +22,7 @@ function Cart(){
         $('.close-cart').removeClass('close-cartshow')
         console.log('close')
     }
-
-  
-    
+ 
     return(
         <>
          

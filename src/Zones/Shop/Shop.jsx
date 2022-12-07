@@ -3,6 +3,7 @@ import Items from '../../API/Controller/shop/shopController';
 
 function Shop() {
 
+   
 return (
 <>
 <div className="shop-div">
