@@ -4,7 +4,7 @@ import {getShop} from "../../API/Axios"
 import CartList from '../Cart/CartList';
 
 function Shop() {
-    const [cartitem, setCartitem] = useState([])
+const [cartitem, setCartitem] = useState([])
 console.log('cartitem',cartitem)
 
 const [items, setItems] = useState([]);
@@ -19,13 +19,11 @@ useEffect(()=>{
     localStorage.setItem('cart',JSON.stringify(cartitem))
 } ,[cartitem])
 
-
-
 const itemid = cartitem.map((item) =>(
     item.id
     ))
+
 const handleAddtocart =(e, item)=>{
-    
     if(itemid.includes(item.id))
     {
         return;
@@ -42,15 +40,15 @@ const getshop = async () =>{
     setItems(result)
     }
 
-
-
-
-
-
 useEffect(()=>{
 getshop()
 },[])
 
+const importAll=(r)=> {
+    return r.keys().map(r);
+    }
+    console.log(importAll)
+    const images = importAll(require.context('./prod-img/', false, /\.(png|jpe? g|svg)$/));
 
 return (
 <>
@@ -60,14 +58,11 @@ return (
 <div className="shop-container">
 <table>
 <tbody>
-<tr>
-<th>Name</th>
-<th>Price</th>
-</tr>
 {items.map((item) =>(
 <tr key={item.id}>
+<td className='shop-img'><img src={images[item.img]} alt=""/></td>
 <td>{item.name}</td>
-<td>{item.price}</td>
+<td>{item.price} €</td>
 <td onClick={(e) => handleAddtocart(e, item)}>Cart</td>
 </tr>
 ))}

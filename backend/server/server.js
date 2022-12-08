@@ -53,16 +53,20 @@ const users = [
         })
     })
 
+
+
     const items = [
         {
             id:0,
-            name:'apple',
-            price:'10'
+            name:'rtx1',
+            price:'100',
+            img:'0'
         },
         {
             id:1,
-            name:'banana',
-            price:'10'
+            name:'rtx2',
+            price:'30',
+            img:'1'
         },
         {
             id:2,
