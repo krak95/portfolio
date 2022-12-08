@@ -21,6 +21,12 @@ $('.close-cart').removeClass('close-cartshow')
 console.log('close')
 }
 
+const handleClear = () =>{
+    $('.cart-tableopen tr').remove()
+    $('.nrofitems p').text('0')
+    localStorage.removeItem('cart')
+}
+
 return(
 <>
 <div>
@@ -37,8 +43,10 @@ close
     {cartitem.map(item=>{
      return <CartItems key={item.id} item={item}/>
     })}
+       
 </tbody>
 </table>
+<button onClick={handleClear}>clear cart</button>
 </div>
 </div>
 </div>
