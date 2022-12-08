@@ -31,7 +31,7 @@ close
 </div>
 <div onClick={opencart} className="cart-div">
 <div className="nrofitems">
-<p>{/*cartitem.length*/}</p>
+<p>{cartitem.length}</p>
 </div>
 <div className="cart-container">
 <table>
