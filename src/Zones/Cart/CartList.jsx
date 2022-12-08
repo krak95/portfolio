@@ -1,7 +1,5 @@
 import "./Cart.css"
 import $ from "jquery"
-import {cart} from './../../API/Controller/shop/addtoCart'
-import {addCart} from './../../API/Axios'
 import CartItems from "./CartItems"
 
 function CartList({cartitem}){

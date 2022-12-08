@@ -5,25 +5,45 @@ import CartList from '../Cart/CartList';
 
 function Shop() {
 
-    const [cartitem, setCartitem] = useState([])
-    const handleAddtocart =(e, item)=>{
-        setCartitem(prevItems => {
-            return [...prevItems,item]
-        })
-        console.log(item)
-    }
-    console.log(cartitem)
-
+const [cartitem, setCartitem] = useState([])
+console.log('cartitem',cartitem)
 
 const [items, setItems] = useState([]);
-const getshop = async () =>{
-const getshop = await getShop()
-const result = getshop.data
-setItems(result)
+console.log('item',items)
+
+const handleAddtocart =(e, item)=>{
+    if(cartitem.includes(item))
+    {
+        return;
+    }
+    else{
+        setCartitem(prevItems => {
+            return [...prevItems,item] })
+    }     
+console.log(item)
 }
+
+const getshop = async () =>{
+    const getshop = await getShop()
+    const result = getshop.data
+    setItems(result)
+    }
+
 useEffect(()=>{
-    getshop()
-    },[])
+        const getcart = JSON.parse(localStorage.getItem('cart'))
+        if(getcart) setCartitem(getcart)
+} ,[])
+
+useEffect(()=>{
+    localStorage.setItem('cart',JSON.stringify(cartitem))
+} ,[cartitem])
+
+
+
+useEffect(()=>{
+getshop()
+},[])
+
 
 return (
 <>
@@ -41,7 +61,7 @@ return (
 <tr  key={item.id}>
 <td>{item.name}</td>
 <td>{item.price}</td>
-<td onClick={e => handleAddtocart(e, item)}>Cart</td>
+<td onClick={(e) => handleAddtocart(e, item)}>Cart</td>
 </tr>
 ))}
 </tbody>

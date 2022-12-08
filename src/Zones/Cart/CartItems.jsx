@@ -7,6 +7,9 @@ return (
 <td>
 {item.name}   
 </td>
+<td>
+{item.price}   
+</td>
 
 </tr>
 </>
