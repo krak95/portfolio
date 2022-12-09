@@ -1,8 +1,8 @@
 @import '../sass/font/font.scss';
 @import "../sass/rootcolors/colors.scss";
 *{
-    font-family: ubuntu-light;
-    letter-spacing:1px;
+font-family: ubuntu-light;
+letter-spacing:1px;
 }
 .topheader{
 background:linear-gradient(to bottom, var(--light), var(--medium));
@@ -19,13 +19,15 @@ text-shadow: 0 0 10px white;
 
 .topmenu{
 display:flex;
-justify-content: space-evenly;
+justify-content: flex-end;
+align-items: center;
 }
 
 .topmenu a{
 text-decoration: none;
 color:white;
 font-size: 20px;
+margin:10px;
 }
 
 .topmenu a:hover{
@@ -34,16 +36,74 @@ text-decoration:underline;
 }
 
 .dropdown button{
-border:1px solid white;
-padding:4px;
+border-left:2px solid white;
 border-radius: 5px;
 background-color: transparent;
 color:white;
+padding:5px;
+font-size:12px;
+display:none;
+}
+.dropdown button:hover{
+background-color: var(--light);
 }
 
 .show{
-display:block;
+display:flex !important;
 }
 .hide{
-    display:none;
+display:none !important;
+}
+.dropdown-div{
+display:none !important;
+}
+
+@media only screen and (max-width:550px) {
+
+.dropdown button{
+display:flex;
+}
+
+.topmenu{
+display:none !important;
+}
+
+.dropdown-div-show{
+display:flex !important;
+transition: 1s !important;
+transition-delay: 1s;
+justify-content: center;
+align-items: center;
+}
+.dropdown-div{
+transition-delay: 1s !important;
+transition: 1s !important;
+background-color: var(--medium);
+position: absolute;
+top:0;
+z-index: 1;
+width: 100%;
+height: 100%;
+}
+
+.dropdown-div ol li{
+display:flex;
+}
+.close-topmenu{
+    cursor: pointer;
+    position: absolute;
+    top:0;
+    left:0;
+    margin:14px;
+}
+.dropdown-div a{
+text-decoration: none;
+color:white;
+font-size: 20px;
+margin:10px;
+}
+.dropdown-div a:hover{
+text-shadow: 0 0 10px white;
+text-decoration:underline;
+}
 }

@@ -11,44 +11,63 @@ import RouteAuth from "../Components/topmenu/topMenu"
 import $ from "jquery"
 
 function Router(){
-    const Forbidden = ({children}) => {
-        const {authenticated,login, loading} = useContext(AuthContext);
-      
-        if(loading){
-          return <div className="loading">Loading...</div>
-        }
-      
-        if(!authenticated){ 
-          return <Navigate to = "/login"/>;
-        }   
-        return children;
-      };
+const Forbidden = ({children}) => {
+const {authenticated,login, loading} = useContext(AuthContext);
+
+if(loading){
+return <div className="loading">Loading...</div>
+}
+
+if(!authenticated){ 
+return <Navigate to = "/login"/>;
+}   
+return children;
+};
 const store = localStorage.getItem('uname')
-    if(store == null){
-      $('.login-route').css('display','block')
-      $('.user-route').css('display','none')
-      console.log('off')
-      }else{
-      $('.login-route').css('display','none')
-      $('.user-route').css('display','block')
-      console.log('on')
-  }
-    return (
-        <>
+if(store == null){
+$('.login-route').css('display','flex')
+$('.user-route').css('display','none')
+console.log('off')
+}else{
+$('.login-route').css('display','none')
+$('.user-route').css('display','flex')
+console.log('on')
+}
+
+const handleDropdownEnter = () =>{
+$('.dropdown-div').addClass('dropdown-div-show')
+}
+
+const handleDropdownLeave = () =>{
+$('.dropdown-div').removeClass('dropdown-div-show')
+}
+
+return (
+<>
 <div className='topheader'>
 <div className='toptitle'>
 <h1>José Amorim</h1>
 </div>
+<div className="dropdown"><button onClick={handleDropdownEnter} onMouseEnter={handleDropdownEnter} onMouseLeave={handleDropdownLeave}>Menu</button></div>
 <div className='topmenu'>
 <Link to="/">  Home</Link>
 <Link className={store === null ? "login-route show" : "login-route hide"} to="/login"> Login</Link>
 <Link className={store === null ? "user-route hide" : "user-route show"} to="/user"> User</Link>
 <RouteAuth/>
-
 <Link to="/shop">Shop</Link>
 <Link to="/calculator">Calculator</Link>
-<div className="dropdown"><button>Dropdown</button></div>
 </div>
+</div>
+<div className="dropdown-div" onMouseEnter={handleDropdownEnter} onMouseLeave={handleDropdownLeave}>
+  
+<ol>
+  <li><div className="close-topmenu" onClick={handleDropdownLeave}>CLOSE</div></li>
+<li><Link to="/">  Home</Link></li>
+<li><Link className={store === null ? "login-route show" : "login-route hide"} to="/login"> Login</Link></li>
+<li><Link className={store === null ? "user-route hide" : "user-route show"} to="/user"> User</Link></li>
+<li><Link to="/shop">Shop</Link></li>
+<li><Link to="/calculator">Calculator</Link></li>
+</ol>
 </div>
 <AuthProvider>
 <Routes>
@@ -59,8 +78,8 @@ const store = localStorage.getItem('uname')
 <Route exact path="calculator" element={<Calculator/>} />
 </Routes>
 </AuthProvider>
-        </>
-    )
+</>
+)
 }
 
 export default Router;

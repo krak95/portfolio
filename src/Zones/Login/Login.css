@@ -97,9 +97,9 @@ margin-top:-10px;
 margin-left:52px;
 font-weight: bold;
 }
-.login-container li{
+.login-div li{
 display:block;
-margin:40px;
+margin:30px;
 }
 .login-container li:nth-child(1)
 {
@@ -110,10 +110,6 @@ margin:40px;
 {
     display: flex;
     justify-content: center;
-}
-.signup-container li{
-display:block;
-margin:40px;
 }
 .signup-container li:nth-child(1)
 {
@@ -162,4 +158,17 @@ margin:40px;
     position: fixed;
     bottom:0;
     right:0;
+}
+
+@media only screen and (max-width:550px) {
+    .login-main-div{
+        margin-top: 250px;
+        }
+    .login-div
+    {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    }
 }
