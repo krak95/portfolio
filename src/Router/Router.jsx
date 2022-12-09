@@ -62,11 +62,11 @@ return (
   
 <ol>
   <li><div className="close-topmenu" onClick={handleDropdownLeave}>CLOSE</div></li>
-<li><Link to="/">  Home</Link></li>
-<li><Link className={store === null ? "login-route show" : "login-route hide"} to="/login"> Login</Link></li>
-<li><Link className={store === null ? "user-route hide" : "user-route show"} to="/user"> User</Link></li>
-<li><Link to="/shop">Shop</Link></li>
-<li><Link to="/calculator">Calculator</Link></li>
+<li><Link onClick={handleDropdownLeave} to="/">  Home</Link></li>
+<li><Link onClick={handleDropdownLeave} className={store === null ? "login-route show" : "login-route hide"} to="/login"> Login</Link></li>
+<li><Link onClick={handleDropdownLeave} className={store === null ? "user-route hide" : "user-route show"} to="/user"> User</Link></li>
+<li><Link onClick={handleDropdownLeave} to="/shop">Shop</Link></li>
+<li><Link onClick={handleDropdownLeave} to="/calculator">Calculator</Link></li>
 </ol>
 </div>
 <AuthProvider>
