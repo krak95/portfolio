@@ -26,7 +26,7 @@ localStorage.setItem('pwd',pwd);
 localStorage.setItem('token',result);
 setUser(uname)
 $('.login-route').css('display','none')
-$('.user-route').css('display','block')
+$('.user-route').css('display','flex')
 navigate("/user")
 }
 }
@@ -38,7 +38,7 @@ localStorage.removeItem('uname')
 localStorage.removeItem('pwd')
 localStorage.removeItem('token')
 console.log('bye')
-$('.login-route').css('display','block')
+$('.login-route').css('display','flex')
 $('.user-route').css('display','none')
 //clearInterval(vtoken3)
 }

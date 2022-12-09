@@ -49,10 +49,10 @@ background-color: var(--light);
 }
 
 .show{
-display:flex !important;
+display:flex;
 }
 .hide{
-display:none !important;
+display:none;
 }
 .dropdown-div{
 display:none !important;
