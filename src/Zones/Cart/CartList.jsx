@@ -2,8 +2,9 @@ import "./Cart.css"
 import $ from "jquery"
 import CartItems from "./CartItems"
 
-function CartList({cartitem}){
-const opencart = ()=>{
+function CartList({cartlist,handleClear1}){
+
+const opencart =()=>{
 $('.cart-div').addClass('cart-open')
 $('.cart-div table').addClass('cart-tableopen')
 $('.nrofitems').addClass('cart-nrofitemshide')
@@ -12,7 +13,7 @@ $('.close-cart').addClass('close-cartshow')
 console.log('open')
 }    
 
-const closecart = () =>{
+const closecart =()=>{
 $('.cart-div').removeClass('cart-open')
 $('.cart-div table').removeClass('cart-tableopen')
 $('.nrofitems').removeClass('cart-nrofitemshide')
@@ -21,10 +22,14 @@ $('.close-cart').removeClass('close-cartshow')
 console.log('close')
 }
 
-const handleClear = () =>{
-    $('.cart-tableopen tr').remove()
+function handleClear(e){
     $('.nrofitems p').text('0')
     localStorage.removeItem('cart')
+    handleClear1(e)
+}
+
+const handlePayment = () =>{
+    localStorage.setItem('orders',JSON.stringify(cartlist))
 }
 
 return(
@@ -35,18 +40,19 @@ close
 </div>
 <div onClick={opencart} className="cart-div">
 <div className="nrofitems">
-<p>{cartitem.length}</p>
+<p>{cartlist.length}</p>
 </div>
 <div className="cart-container">
 <table>
 <tbody>
-    {cartitem.map(item=>{
-     return <CartItems key={item.id} item={item}/>
+    {cartlist.map(item=>{
+     return <CartItems key={item.id} items={item}/>
     })}
        
 </tbody>
 </table>
 <button onClick={handleClear}>clear cart</button>
+<button onClick={handlePayment}>Payment</button>
 </div>
 </div>
 </div>

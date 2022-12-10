@@ -1,14 +1,14 @@
 import React from "react"
 
-function CartItems({item}){
+function CartItems({items}){
 return (
 <>
 <tr>
 <td>
-{item.name}   
+{items.name}   
 </td>
 <td>
-{item.price}   
+{items.price}   
 </td>
 
 </tr>

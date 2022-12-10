@@ -5,7 +5,6 @@ import CartList from '../Cart/CartList';
 
 function Shop() {
 const [cartitem, setCartitem] = useState([])
-console.log('cartitem',cartitem)
 
 const [items, setItems] = useState([]);
 console.log('item',items)
@@ -14,12 +13,11 @@ console.log('item',items)
         if(getcart) setCartitem(getcart)
 } ,[])
 
-
 useEffect(()=>{
     localStorage.setItem('cart',JSON.stringify(cartitem))
 } ,[cartitem])
 
-const itemid = cartitem.map((item) =>(
+const itemid = cartitem?.map((item) =>(
     item.id
     ))
 
@@ -32,6 +30,13 @@ const handleAddtocart =(e, item)=>{
         setCartitem(prevItems => {
             return [...prevItems,item] })
     }     
+}
+console.log('cartitem',cartitem)
+
+const clearCart =()=>{
+    setCartitem([])
+    localStorage.removeItem('cart')
+    console.log('cartitem',cartitem)
 }
 
 const getshop = async () =>{
@@ -47,7 +52,6 @@ getshop()
 const importAll=(r)=> {
     return r.keys().map(r);
     }
-    console.log(importAll)
     const images = importAll(require.context('./prod-img/', false, /\.(png|jpe? g|svg)$/));
 
 return (
@@ -63,14 +67,15 @@ return (
 <td className='shop-img'><img src={images[item.img]} alt=""/></td>
 <td>{item.name}</td>
 <td>{item.price} €</td>
-<td onClick={(e) => handleAddtocart(e, item)}>Cart</td>
+<td><button  onClick={(e) => handleAddtocart(e, item)}>Cart</button></td>
 </tr>
 ))}
 </tbody>
 </table>
 </div>
-<CartList cartitem={cartitem}/>
+<CartList cartlist={cartitem} handleClear1={(e) => clearCart(e)}/>
 </>
 )
 }
 export default Shop
+

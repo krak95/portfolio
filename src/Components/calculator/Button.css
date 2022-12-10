@@ -1,4 +1,4 @@
-button {
+.wrapper button {
     border: none;
     background-color: rgb(80, 60, 209);
     font-size: 24px;
@@ -9,7 +9,7 @@ button {
     outline: none;
   }
   
-  button:hover {
+.wrapper button:hover {
     background-color: rgb(61, 43, 184);
   }
   
