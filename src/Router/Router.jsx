@@ -24,15 +24,6 @@ return <Navigate to = "/login"/>;
 return children;
 };
 const store = localStorage.getItem('uname')
-if(store == null){
-$('.login-route').css('display','flex')
-$('.user-route').css('display','none')
-console.log('off')
-}else{
-$('.login-route').css('display','none')
-$('.user-route').css('display','flex')
-console.log('on')
-}
 
 const handleDropdownEnter = () =>{
 $('.dropdown-div').addClass('dropdown-div-show')
