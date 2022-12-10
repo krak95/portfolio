@@ -23,8 +23,6 @@ console.log('close')
 }
 
 function handleClear(e){
-    $('.nrofitems p').text('0')
-    localStorage.removeItem('cart')
     handleClear1(e)
 }
 
