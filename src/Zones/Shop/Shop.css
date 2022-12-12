@@ -1,5 +1,8 @@
 @import '../../sass/font/font.scss';
 @import "../../sass/rootcolors/colors.scss";
+*{
+    transition: .3s;
+}
 
 .shop-div{
     display:flex;
@@ -78,7 +81,7 @@ background-color: var(--light);
 .shop2
 {
     display:grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto auto;
     background-color: var(--medium);
     padding: 10px;
 }
@@ -90,8 +93,34 @@ background-color: var(--light);
     font-size: 30px;
     text-align: center;
 }
-
-@media only screen and (max-width:560px) {
+@media only screen and (max-width:1500px) {
+    .shop2
+    {
+        display:grid;
+        grid-template-columns: auto auto auto auto;
+        background-color: var(--medium);
+        padding: 10px;
+    }
+}
+@media only screen and (max-width:1500px) {
+    .shop2
+    {
+        display:grid;
+        grid-template-columns: auto auto auto ;
+        background-color: var(--medium);
+        padding: 10px;
+    }
+}
+@media only screen and (max-width:1100px) {
+    .shop2
+    {
+        display:grid;
+        grid-template-columns: auto auto ;
+        background-color: var(--medium);
+        padding: 10px;
+    }
+}
+@media only screen and (max-width:710px) {
     .shop2
 {
     display:flex;
