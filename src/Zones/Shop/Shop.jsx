@@ -55,10 +55,10 @@ const importAll=(r)=> {
 return (
 <>
 <div className="shop-div">
-<h1>Shop</h1>
 </div>
 <div className="shop-container">
-<table>
+    <div className='shop1'>
+    <table>
 <tbody>
 {items.map((item) =>(
 <tr key={item.id}>
@@ -70,6 +70,17 @@ return (
 ))}
 </tbody>
 </table>
+    </div>
+    <div className='shop2'>
+        {items.map((item) =>(
+        <div className='grid-item' key={item.id}>
+            <div><img src={images[item.img]} alt=""/></div>
+            <div>{item.name}</div>
+            <div>{item.price} €</div>
+            <div><button  onClick={(e) => handleAddtocart(e, item)}>Cart</button></div>
+        </div>
+            ))}
+    </div>
 </div>
 <CartList cartlist={cartitem} handleClear1={(e) => clearCart(e)}/>
 </>

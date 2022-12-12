@@ -66,12 +66,49 @@ const users = [
             id:1,
             name:'rtx2',
             price:'30',
-            img:'1'
+            img:'0'
         },
         {
             id:2,
-            name:'orange',
-            price:'10'
+            name:'rtx2',
+            price:'30',
+            img:'0'
+        },
+        {
+            id:3,
+            name:'rtx2',
+            price:'30',
+            img:'0'
+        },
+        {
+            id:4,
+            name:'rtx2',
+            price:'30',
+            img:'0'
+        },
+        {
+            id:5,
+            name:'rtx2',
+            price:'30',
+            img:'0'
+        },
+        {
+            id:6,
+            name:'rtx2',
+            price:'30',
+            img:'0'
+        },
+        {
+            id:7,
+            name:'rtx2',
+            price:'30',
+            img:'0'
+        },
+        {
+            id:8,
+            name:'rtx2',
+            price:'30',
+            img:'0'
         }
     ]
     app.get('/getShop', (req,res)=>{

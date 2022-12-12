@@ -13,6 +13,7 @@
     display:flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .shop-container table{
@@ -52,9 +53,9 @@
     cursor: pointer;
 }
 
-.shop-img img{
-    width: 150px;
-    height: auto;
+img{
+    width: auto;
+    height: 150px;
 }
 
 .shop-container button 
@@ -69,4 +70,35 @@
 {
 cursor: pointer;
 background-color: var(--light);
+}
+.shop1
+{
+    display: none !important;
+}
+.shop2
+{
+    display:grid;
+    grid-template-columns: auto auto auto;
+    background-color: var(--medium);
+    padding: 10px;
+}
+.grid-item
+{
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+@media only screen and (max-width:560px) {
+    .shop2
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--medium);
+    padding: 10px;
+}
 }

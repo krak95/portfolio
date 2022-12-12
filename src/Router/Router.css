@@ -58,7 +58,7 @@ display:none;
 display:none !important;
 }
 
-@media only screen and (max-width:550px) {
+@media only screen and (max-width:560px) {
 
 .dropdown button{
 display:flex;
