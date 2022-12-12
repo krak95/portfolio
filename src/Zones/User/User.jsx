@@ -10,7 +10,7 @@ useEffect(()=>{
     console.log(order)
     setItems(order)
     },[])
-    console.log(items)
+    console.log('order: ',items)
     
 return (
 <div className="user-div">
@@ -21,6 +21,7 @@ return (
             <tbody>
                     {items?.map((item=>(
                         <tr key={item.id}>
+                            <td>{item.nr}</td>
                             <td>{item.name}</td>
                             <td>{item.price}</td>
                         </tr>

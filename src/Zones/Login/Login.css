@@ -1,7 +1,7 @@
 @import '../../sass/font/font.scss';
 @import "../../sass/rootcolors/colors.scss";
 body{
-    background-color: white;
+background-color: white;
 }
 .login-main-div{
 display: flex;
@@ -95,7 +95,6 @@ background-color: var(--grey3);
 position: absolute;
 margin-top:-10px;
 margin-left:52px;
-font-weight: bold;
 }
 .login-div li{
 display:block;

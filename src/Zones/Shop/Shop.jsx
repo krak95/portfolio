@@ -7,7 +7,6 @@ function Shop() {
 const [cartitem, setCartitem] = useState([])
 
 const [items, setItems] = useState([]);
-console.log('item',items)
     useEffect(()=>{
         const getcart = JSON.parse(localStorage.getItem('cart'))
         if(getcart) setCartitem(getcart)
@@ -31,7 +30,6 @@ const handleAddtocart =(e, item)=>{
             return [...prevItems,item] })
     }     
 }
-console.log('cartitem',cartitem)
 
 const clearCart =()=>{
     setCartitem([])
