@@ -1,0 +1,25 @@
+@import '../../sass/font/font.scss';
+@import "../../sass/rootcolors/colors.scss";
+*{
+    transition: .3s;
+}
+.filters-div
+{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    background: red;
+}
+input[type=range]::-webkit-slider-runnable-track{
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+    border-radius: 10px;
+    background: var(--light);
+}

@@ -2,6 +2,7 @@ import './Shop.css';
 import {useState, useEffect} from "react"
 import {getShop} from "../../API/Axios"
 import CartList from '../Cart/CartList';
+import Filters from './Filters';
 
 function Shop() {
 const [cartitem, setCartitem] = useState([])
@@ -57,6 +58,7 @@ return (
 <div className="shop-div">
 </div>
 <div className="shop-container">
+<Filters/>
     <div className='shop1'>
     <table>
 <tbody>
@@ -81,8 +83,8 @@ return (
         </div>
             ))}
     </div>
-</div>
 <CartList cartlist={cartitem} handleClear1={(e) => clearCart(e)}/>
+</div>
 </>
 )
 }

@@ -14,9 +14,8 @@
 .shop-container{
     padding:10px;
     display:flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .shop-container table{
@@ -102,7 +101,7 @@ background-color: var(--light);
         padding: 10px;
     }
 }
-@media only screen and (max-width:1500px) {
+@media only screen and (max-width:1300px) {
     .shop2
     {
         display:grid;
