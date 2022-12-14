@@ -18,20 +18,24 @@ const handlePayment = () =>{
     localStorage.setItem('orders',localStorage.getItem('cart'))
 }
 
-const opencart =()=>{
+const opencart =(e)=>{
+    e.stopPropagation();
 $('.cart-div').addClass('cart-open')
 $('.cart-div table').addClass('cart-tableopen')
 $('.nrofitems').addClass('cart-nrofitemshide')
 $('.cart-container').addClass('cart-containerflex')
 $('.close-cart').addClass('close-cartshow')
+console.log('open')
 }    
 
-const closecart =()=>{
+const closecart =(e)=>{
+    e.stopPropagation();
 $('.cart-div').removeClass('cart-open')
 $('.cart-div table').removeClass('cart-tableopen')
 $('.nrofitems').removeClass('cart-nrofitemshide')
 $('.cart-container').removeClass('cart-containerflex')
 $('.close-cart').removeClass('close-cartshow')
+console.log('close')
 }
 
 function handleClear(){
@@ -41,11 +45,11 @@ function handleClear(){
 if(cartstate.length === 0)
 {
     return(
-        <div className="cart-div">
-        <div onClick={closecart} className="close-cart">
+
+        <div onClick={opencart} className="cart-div">
+                    <div onClick={closecart} className="close-cart">
         close
         </div>
-        <div onClick={opencart} className="cart-div">
         <div className="nrofitems">
             <img src={cartimg} alt="" />
             <div >
@@ -63,7 +67,6 @@ if(cartstate.length === 0)
                
         </tbody>
         </table>
-        </div>
         <div className="cart-controller">
         </div>
         </div>
@@ -75,11 +78,8 @@ if(cartstate.length !== 0)
 {
     return(
         <>
-        <div>
-        <div onClick={closecart} className="close-cart">
-        close
-        </div>
         <div onClick={opencart} className="cart-div">
+        <div onClick={closecart} className="close-cart">close</div>
         <div className="nrofitems">
             <img src={cartimg} alt="" />
             <div >
@@ -97,7 +97,6 @@ if(cartstate.length !== 0)
                
         </tbody>
         </table>
-        </div>
         <div className="cart-controller">
         <button onClick={handleClear}>clear cart</button>
         <button onClick={handlePayment}>Payment</button>

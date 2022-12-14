@@ -3,6 +3,7 @@ import {useState, useEffect} from "react"
 import {getShop} from "../../API/Axios"
 import CartList from '../Cart/CartList';
 import Filters from './Filters';
+import $ from 'jquery'
 
 function Shop() {
 const [cartitem, setCartitem] = useState([])
@@ -52,6 +53,20 @@ const importAll=(r)=> {
     return r.keys().map(r);
     }
     const images = importAll(require.context('./prod-img/', false, /\.(png|jpe? g|svg)$/));
+
+
+    const pagination  = () =>{
+        let nritem = $('.grid-item').length
+        if(nritem > 8){
+            $('.grid-item').hide()
+            $('.grid-item').slice(0, 8).show();
+        }
+        console.log('pagination')
+    }
+
+useEffect(()=>{
+        pagination()
+})
 
 return (
 <>

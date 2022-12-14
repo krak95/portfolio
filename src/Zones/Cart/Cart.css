@@ -4,7 +4,7 @@
     transition: .3s;
 }
 .cart-div{
-background-color: var(--medium);
+background-color: var(--dark);
 height: 50px;
 width: 50px;
 border-radius: 50%;
@@ -12,9 +12,8 @@ display:flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-position: fixed;
-top:84px;
-right:20px;
+position: relative;
+margin:10px;
 }
 
 .cart-div:hover{
@@ -22,18 +21,13 @@ cursor: pointer;
 background-color: var(--light);
 }
 .cart-open{
-    background-color: var(--light);
-    border: 4px solid var(--dark);
-    right:0;
-    left:0;
-    top:140px;
-    height:50%;
-    width: 50%;
-    margin:0 auto;
-    border-radius: 0;
+
+    background-color: var(--medium);
+    border: 2px solid var(--dark);
+    height:100%;
+    width: 100%;
     cursor:default !important;
     border-radius: 10px;
-    box-shadow: 0 10px 30px 2px black;
     }
 .nrofitems img {
     width: 30px;
@@ -62,17 +56,16 @@ align-items: center;
     display:none;
 }
 .close-cartshow{
-    position: fixed;
-    top:154px;
-    z-index: 1;
-    right:26%;
+    z-index: 55;
     display:flex !important;
     align-items: center;
+    align-self: flex-end;
     justify-content: center;
     background-color: rgb(245, 70, 70);
     height: 50px;
     width: 50px;
     border-radius: 50%;
+    margin:10px;
 }
 .close-cartshow:hover{
     cursor: pointer;
@@ -80,61 +73,56 @@ align-items: center;
 }
 .cart-container{
     display:none;
-    justify-content: flex-start;
-    align-items: flex-start;
     flex-direction: column;
+    width: 100%;
     height: 100%;
+}
+.cart-tableflex{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
 }
 .cart-container table{
     display: flex;
-    margin:30px;
     border-collapse: collapse;
     border-spacing: 0 0;
+    background-color:transparent;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
 }
 .cart-containerflex{
     display:flex !important;
     
 }
 .cart-container tr{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    border:1px solid black;
-    margin-top:20px;
-    padding:10px;
+    border:none;
+    border-bottom:1px solid var(--dark);
+    border-radius: 0;
+    display: flex;
+    flex-direction: row;
 }
 .cart-container tr:hover{
     background-color: var(--light);
     cursor: pointer;
-    box-shadow:0 0 10px 2px var(--dark);
-}
-.cart-tableflex
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
 }
 .cart-nrofitemshide{
 display:none !important;
 }
-
 .cart-controller
 {
+    margin:10px;
     display:flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-    height: 25%;
+    justify-content: space-around;
 }
 .cart-controller button
 {
-
     border:1px solid var(--black);
-    background-color: var(--medium);
+    background-color: var(--light2);
     padding:10px;
     border-radius: 5px;
+    width: 100px;
 }
 .cart-controller button:hover
 {
