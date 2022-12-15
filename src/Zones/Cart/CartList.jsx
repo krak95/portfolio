@@ -47,15 +47,10 @@ if(cartstate.length === 0)
     return(
 
         <div onClick={opencart} className="cart-div">
-                    <div onClick={closecart} className="close-cart">
-        close
-        </div>
+        <div onClick={closecart} className="close-cart">close</div>
         <div className="nrofitems">
             <img src={cartimg} alt="" />
-            <div >
-            <p>{cartlist.length}</p>
-            </div>
-        
+            <div><p>{cartlist.length}</p></div>
         </div>
         <div className="cart-container">
             <div className="cart-tableflex">
@@ -98,8 +93,8 @@ if(cartstate.length !== 0)
         </tbody>
         </table>
         <div className="cart-controller">
-        <button onClick={handleClear}>clear cart</button>
-        <button onClick={handlePayment}>Payment</button>
+        <button onClick={handleClear}>x</button>
+        <button onClick={handlePayment}>pay</button>
         </div>
         </div>
         </div>
