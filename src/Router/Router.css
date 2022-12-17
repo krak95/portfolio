@@ -79,9 +79,9 @@ align-items: center;
 transition-delay: 1s !important;
 transition: 1s !important;
 background-color: var(--medium);
-position: absolute;
+position: fixed;
 top:0;
-z-index: 1;
+z-index: 56;
 width: 100%;
 height: 100%;
 }
