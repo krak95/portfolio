@@ -1,10 +1,11 @@
-import React,{useContext,useState} from "react"
+import React,{useContext} from "react"
 import {Routes,Route,Link,Navigate} from "react-router-dom"
 import Home from "../Zones/Home/Home"
 import Login from "../Zones/Login/Login"
 import Shop from "../Zones/Shop/Shop"
 import Calculator from "../Zones/Calculator/Calculator"
 import User from "../Zones/User/User"
+import Ttt from "../Zones/Ttt/Ttt"
 import "./Router.css"
 import { AuthContext, AuthProvider } from "./../API/Controller/login/loginController"
 import RouteAuth from "../Components/topmenu/topMenu"
@@ -12,7 +13,7 @@ import $ from "jquery"
 
 function Router(){
 const Forbidden = ({children}) => {
-const {authenticated,login, loading} = useContext(AuthContext);
+const {authenticated, loading} = useContext(AuthContext);
 
 if(loading){
 return <div className="loading">Loading...</div>
@@ -47,6 +48,7 @@ return (
 <RouteAuth/>
 <Link to="/shop">Shop</Link>
 <Link to="/calculator">Calculator</Link>
+<Link to="/tictactoe">Tic-Tac-Toe</Link>
 </div>
 </div>
 <div className="dropdown-div" onMouseEnter={handleDropdownEnter} onMouseLeave={handleDropdownLeave}>
@@ -58,6 +60,7 @@ return (
 <li><Link onClick={handleDropdownLeave} className={store === null ? "user-route hide" : "user-route show"} to="/user"> User</Link></li>
 <li><Link onClick={handleDropdownLeave} to="/shop">Shop</Link></li>
 <li><Link onClick={handleDropdownLeave} to="/calculator">Calculator</Link></li>
+<li><Link onClick={handleDropdownLeave} to="/calculator">Tic-Tac-Toe</Link></li>
 </ol>
 </div>
 <AuthProvider>
@@ -67,6 +70,7 @@ return (
 <Route exact path="user" element={<Forbidden><User/></Forbidden>}/>
 <Route exact path="shop" element={<Shop/>}/>
 <Route exact path="calculator" element={<Calculator/>} />
+<Route exact path="tictactoe" element={<Ttt/>} />
 </Routes>
 </AuthProvider>
 </>
