@@ -143,6 +143,7 @@ let [calc, setCalc] = useState({
                     : numClickHandler
                 }
               />
+
             );
           })
         }
