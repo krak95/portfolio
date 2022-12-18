@@ -9,6 +9,9 @@ const [player, setPlayer] = useState(0)
 const [plays, setPlays] = useState(0)
 
     const play =(e)=>{
+        if(e.target.innerHTML !== ''){
+            return;
+        }
         if(player === 0){
             e.target.innerHTML = '0'
             setPlayer(1)
