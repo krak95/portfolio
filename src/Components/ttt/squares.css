@@ -7,9 +7,12 @@
 }
 
 .gameboard button{
-    padding:80px;
+    width: 140px;
+    height: 140px;
     border:1px black solid;
     border-radius:5px;
+    font-size:30px;
+    font-weight: bold;
 }
 .gameboard button:hover{
     background-color:aquamarine;

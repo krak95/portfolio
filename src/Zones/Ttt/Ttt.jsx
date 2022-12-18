@@ -2,113 +2,124 @@ import "./Ttt.css"
 import Squares from "../../Components/ttt/squares"
 import {useState} from "react"
 import $ from "jquery"
+import X from "./../../Components/ttt/img/cancel.png"
+import O from "./../../Components/ttt/img/letter-o.png"
 
 
 function Ttt(){
-const [player, setPlayer] = useState(0)
+const [player, setPlayer] = useState('O')
 const [plays, setPlays] = useState(0)
 
     const play =(e)=>{
         if(e.target.innerHTML !== ''){
             return;
         }
-        if(player === 0){
-            e.target.innerHTML = '0'
-            setPlayer(1)
+        if(player === 'O'){
+            e.target.innerHTML = 'O'
+            setPlayer('X')
             setPlays(plays + 1)
         }
-        if(player === 1){
-            e.target.innerHTML = '1'
-            setPlayer(0)
+        if(player === 'X'){
+            e.target.innerHTML = 'X'
+            setPlayer('O')
             setPlays(plays + 1)
         }
         if(plays === 8){
-            alert('gameover')
+            alert('TIED')
             $('.gameboard button').html('')
             setPlays(0)
         }
-        if($('.s0').html() === '0' && $('.s1').html() === '0' && $('.s2').html() === '0'){
-            alert('player0 won')
+        if($('.s0').html() === 'O' && $('.s1').html() === 'O' && $('.s2').html() === 'O'){
+            alert('Player O won')
             $('.gameboard button').html('')
             setPlays(0)
         }
-        if($('.s0').html() === '0' && $('.s3').html() === '0' && $('.s6').html() === '0'){
-            alert('player0 won')
+        if($('.s0').html() === 'O' && $('.s3').html() === 'O' && $('.s6').html() === 'O'){
+            alert('Player O won')
             $('.gameboard button').html('')
             setPlays(0)
         }
-        if($('.s0').html() === '0' && $('.s4').html() === '0' && $('.s8').html() === '0'){
-            alert('player0 won')
+        if($('.s0').html() === 'O' && $('.s4').html() === 'O' && $('.s8').html() === 'O'){
+            alert('Player O won')
             $('.gameboard button').html('')
             setPlays(0)
         }
-        if($('.s3').html() === '0' && $('.s4').html() === '0' && $('.s5').html() === '0'){
-            alert('player0 won')
+        if($('.s3').html() === 'O' && $('.s4').html() === 'O' && $('.s5').html() === 'O'){
+            alert('Player O won')
             $('.gameboard button').html('')
             setPlays(0)
         }
-        if($('.s6').html() === '0' && $('.s7').html() === '0' && $('.s8').html() === '0'){
-            alert('player0 won')
+        if($('.s6').html() === 'O' && $('.s7').html() === 'O' && $('.s8').html() === 'O'){
+            alert('Player O won')
             $('.gameboard button').html('')
             setPlays(0)
         }
-        if($('.s1').html() === '0' && $('.s4').html() === '0' && $('.s7').html() === '0'){
-            alert('player0 won')
+        if($('.s1').html() === 'O' && $('.s4').html() === 'O' && $('.s7').html() === 'O'){
+            alert('Player O won')
             $('.gameboard button').html('')
             setPlays(0)
         }
-        if($('.s2').html() === '0' && $('.s5').html() === '0' && $('.s8').html() === '0'){
-            alert('player0 won')
+        if($('.s2').html() === 'O' && $('.s5').html() === 'O' && $('.s8').html() === 'O'){
+            alert('Player O won')
             $('.gameboard button').html('')
             setPlays(0)
         }
-        if($('.s2').html() === '0' && $('.s4').html() === '0' && $('.s6').html() === '0'){
-            alert('player0 won')
+        if($('.s2').html() === 'O' && $('.s4').html() === 'O' && $('.s6').html() === 'O'){
+            alert('Player O won')
             $('.gameboard button').html('')
             setPlays(0)
         }
-        if($('.s0').html() === '1' && $('.s1').html() === '1' && $('.s2').html() === '1'){
-            alert('player1 won')
+        if($('.s0').html() === 'X' && $('.s1').html() === 'X' && $('.s2').html() === 'X'){
+            alert('Player X won')
             $('.gameboard button').html('')
             setPlays(0)
         }
-        if($('.s0').html() === '1' && $('.s3').html() === '1' && $('.s6').html() === '1'){
-            alert('player1 won')
+        if($('.s0').html() === 'X' && $('.s3').html() === 'X' && $('.s6').html() === 'X'){
+            alert('Player X won')
             $('.gameboard button').html('')
             setPlays(0)
         }
-        if($('.s0').html() === '1' && $('.s4').html() === '1' && $('.s8').html() === '1'){
-            alert('player1 won')
+        if($('.s0').html() === 'X' && $('.s4').html() === 'X' && $('.s8').html() === 'X'){
+            alert('Player X won')
             $('.gameboard button').html('')
             setPlays(0)
         }
-        if($('.s3').html() === '1' && $('.s4').html() === '1' && $('.s5').html() === '1'){
-            alert('player1 won')
+        if($('.s3').html() === 'X' && $('.s4').html() === 'X' && $('.s5').html() === 'X'){
+            alert('Player X won')
             $('.gameboard button').html('')
             setPlays(0)
         }
-        if($('.s6').html() === '1' && $('.s7').html() === '1' && $('.s8').html() === '1'){
-            alert('player1 won')
+        if($('.s6').html() === 'X' && $('.s7').html() === 'X' && $('.s8').html() === 'X'){
+            alert('Player X won')
             $('.gameboard button').html('')
             setPlays(0)
         }
-        if($('.s1').html() === '1' && $('.s4').html() === '1' && $('.s7').html() === '1'){
-            alert('player1 won')
+        if($('.s1').html() === 'X' && $('.s4').html() === 'X' && $('.s7').html() === 'X'){
+            alert('Player X won')
             $('.gameboard button').html('')
             setPlays(0)
         }
-        if($('.s2').html() === '1' && $('.s5').html() === '1' && $('.s8').html() === '1'){
-            alert('player1 won')
+        if($('.s2').html() === 'X' && $('.s5').html() === 'X' && $('.s8').html() === 'X'){
+            alert('Player X won')
             $('.gameboard button').html('')
             setPlays(0)
         }
-        if($('.s2').html() === '1' && $('.s4').html() === '1' && $('.s6').html() === '1'){
-            alert('player1 won')
+        if($('.s2').html() === 'X' && $('.s4').html() === 'X' && $('.s6').html() === 'X'){
+            alert('Player X won')
             $('.gameboard button').html('')
             setPlays(0)
         }
         console.log("player: ",player, "plays :",plays)
     }
+
+const swapFirstO = () =>{
+    setPlayer('O')
+    console.log(player)
+}
+const swapFirstX = () =>{
+    setPlayer('X')
+    console.log(player)
+}
     
 const squares = 
     [
@@ -119,13 +130,18 @@ const squares =
 
     return(
         <>
-        <h1>Player {player.player} turn</h1>
+        <h1>Player {player} turn</h1>
         <div className="div-flex">
+            
         <div className="game-div">
+        <div>
+                <button onClick={swapFirstO}>First player O</button>
+                <button onClick={swapFirstX}>First player X</button>
+            </div>
         <div className="gameboard">
-        {squares.flat().map((btn, i) => {
+        {squares.flat().map((val, i) => {
             return(
-           <Squares onClick={play} key={i} className={'s'+i}/>
+           <Squares onClick={play} key={i} className={'s'+i} value={val}/>
             )
         })}
         </div>
