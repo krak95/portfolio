@@ -1,3 +1,24 @@
+@import '../../sass/font/font.scss';
+@import "../../sass/rootcolors/colors.scss";
+.title{
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    margin:10px;
+}
+.scoreboard{
+    margin-top:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.scoreboard>div{
+    width:80%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .game-div{
     display: flex;
     justify-content: center;
@@ -9,4 +30,36 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.gamemenu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.gamemenu button{
+    height: 60px;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid var(--dark);
+    background-color: var(--light2);
+    border-radius: 5px;
+}
+.gamemenu button:hover{
+    background-color: var(--light);
+    cursor: pointer;
+    text-decoration: underline;
+
+}
+
+.playerO{
+    padding:5px;
+}
+.playerX{
+    padding:5px;
+}
+.winningAnimation{
+    box-shadow: 0 0 10px 2px var(--light);
+    border-radius: 10px;
+    padding:5px;
+    background-color: var(--light);
 }

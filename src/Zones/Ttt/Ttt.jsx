@@ -9,6 +9,8 @@ import O from "./../../Components/ttt/img/letter-o.png"
 function Ttt(){
 const [player, setPlayer] = useState('O')
 const [plays, setPlays] = useState(0)
+const [winO, setWinO] = useState(0)
+const [winX, setWinX] = useState(0)
 
     const play =(e)=>{
         if(e.target.innerHTML !== ''){
@@ -30,82 +32,114 @@ const [plays, setPlays] = useState(0)
             setPlays(0)
         }
         if($('.s0').html() === 'O' && $('.s1').html() === 'O' && $('.s2').html() === 'O'){
-            alert('Player O won')
+            $('.playerO').addClass('winningAnimation')
+            $('.playerX').removeClass('winningAnimation')
+            setWinO(winO + 1)
             $('.gameboard button').html('')
             setPlays(0)
         }
         if($('.s0').html() === 'O' && $('.s3').html() === 'O' && $('.s6').html() === 'O'){
-            alert('Player O won')
+            $('.playerO').addClass('winningAnimation')
+            $('.playerX').removeClass('winningAnimation')
+            setWinO(winO + 1)
             $('.gameboard button').html('')
             setPlays(0)
         }
         if($('.s0').html() === 'O' && $('.s4').html() === 'O' && $('.s8').html() === 'O'){
-            alert('Player O won')
+            $('.playerO').addClass('winningAnimation')
+            $('.playerX').removeClass('winningAnimation')
+            setWinO(winO + 1)
             $('.gameboard button').html('')
             setPlays(0)
         }
         if($('.s3').html() === 'O' && $('.s4').html() === 'O' && $('.s5').html() === 'O'){
-            alert('Player O won')
+            $('.playerO').addClass('winningAnimation')
+            $('.playerX').removeClass('winningAnimation')
+            setWinO(winO + 1)
             $('.gameboard button').html('')
             setPlays(0)
         }
         if($('.s6').html() === 'O' && $('.s7').html() === 'O' && $('.s8').html() === 'O'){
-            alert('Player O won')
+            $('.playerO').addClass('winningAnimation')
+            $('.playerX').removeClass('winningAnimation')
+            setWinO(winO + 1)
             $('.gameboard button').html('')
             setPlays(0)
         }
         if($('.s1').html() === 'O' && $('.s4').html() === 'O' && $('.s7').html() === 'O'){
-            alert('Player O won')
+            $('.playerO').addClass('winningAnimation')
+            $('.playerX').removeClass('winningAnimation')
+            setWinO(winO + 1)
             $('.gameboard button').html('')
             setPlays(0)
         }
         if($('.s2').html() === 'O' && $('.s5').html() === 'O' && $('.s8').html() === 'O'){
-            alert('Player O won')
+            $('.playerO').addClass('winningAnimation')
+            $('.playerX').removeClass('winningAnimation')
+            setWinO(winO + 1)
             $('.gameboard button').html('')
             setPlays(0)
         }
         if($('.s2').html() === 'O' && $('.s4').html() === 'O' && $('.s6').html() === 'O'){
-            alert('Player O won')
+            $('.playerO').addClass('winningAnimation')
+            $('.playerX').removeClass('winningAnimation')
+            setWinO(winO + 1)
             $('.gameboard button').html('')
             setPlays(0)
         }
         if($('.s0').html() === 'X' && $('.s1').html() === 'X' && $('.s2').html() === 'X'){
-            alert('Player X won')
+            $('.playerX').addClass('winningAnimation')
+            $('.playerO').removeClass('winningAnimation')
+            setWinX(winX + 1)
             $('.gameboard button').html('')
             setPlays(0)
         }
         if($('.s0').html() === 'X' && $('.s3').html() === 'X' && $('.s6').html() === 'X'){
-            alert('Player X won')
+            $('.playerX').addClass('winningAnimation')
+            $('.playerO').removeClass('winningAnimation')
+            setWinX(winX + 1)
             $('.gameboard button').html('')
             setPlays(0)
         }
         if($('.s0').html() === 'X' && $('.s4').html() === 'X' && $('.s8').html() === 'X'){
-            alert('Player X won')
+            $('.playerX').addClass('winningAnimation')
+            $('.playerO').removeClass('winningAnimation')
+            setWinX(winX + 1)
             $('.gameboard button').html('')
             setPlays(0)
         }
         if($('.s3').html() === 'X' && $('.s4').html() === 'X' && $('.s5').html() === 'X'){
-            alert('Player X won')
+            $('.playerX').addClass('winningAnimation')
+            $('.playerO').removeClass('winningAnimation')
+            setWinX(winX + 1)
             $('.gameboard button').html('')
             setPlays(0)
         }
         if($('.s6').html() === 'X' && $('.s7').html() === 'X' && $('.s8').html() === 'X'){
-            alert('Player X won')
+            $('.playerX').addClass('winningAnimation')
+            $('.playerO').removeClass('winningAnimation')
+            setWinX(winX + 1)
             $('.gameboard button').html('')
             setPlays(0)
         }
         if($('.s1').html() === 'X' && $('.s4').html() === 'X' && $('.s7').html() === 'X'){
-            alert('Player X won')
+            $('.playerX').addClass('winningAnimation')
+            $('.playerO').removeClass('winningAnimation')
+            setWinX(winX + 1)
             $('.gameboard button').html('')
             setPlays(0)
         }
         if($('.s2').html() === 'X' && $('.s5').html() === 'X' && $('.s8').html() === 'X'){
-            alert('Player X won')
+            $('.playerX').addClass('winningAnimation')
+            $('.playerO').removeClass('winningAnimation')
+            setWinX(winX + 1)
             $('.gameboard button').html('')
             setPlays(0)
         }
         if($('.s2').html() === 'X' && $('.s4').html() === 'X' && $('.s6').html() === 'X'){
-            alert('Player X won')
+            $('.playerX').addClass('winningAnimation')
+            $('.playerO').removeClass('winningAnimation')
+            setWinX(winX + 1)
             $('.gameboard button').html('')
             setPlays(0)
         }
@@ -114,11 +148,9 @@ const [plays, setPlays] = useState(0)
 
 const swapFirstO = () =>{
     setPlayer('O')
-    console.log(player)
 }
 const swapFirstX = () =>{
     setPlayer('X')
-    console.log(player)
 }
     
 const squares = 
@@ -130,14 +162,21 @@ const squares =
 
     return(
         <>
-        <h1>Player {player} turn</h1>
+
+        <div className="title">
+        <h1 className="playerO">Player O turn</h1>
+        <h1 className="playerX">Player X turn</h1>
+        </div>
+
+        <div className="gamemenu">
+                <button onClick={swapFirstO}>First player O</button>
+                <button onClick={swapFirstX}>First player X</button>
+        </div>
+
         <div className="div-flex">
             
         <div className="game-div">
-        <div>
-                <button onClick={swapFirstO}>First player O</button>
-                <button onClick={swapFirstX}>First player X</button>
-            </div>
+
         <div className="gameboard">
         {squares.flat().map((val, i) => {
             return(
@@ -147,6 +186,20 @@ const squares =
         </div>
         </div>
 
+        </div>
+        
+
+        <div className="scoreboard">
+                <h2>Scoreboard</h2>
+                <div>
+                <div>
+                    {winO}
+                </div>
+                <div>
+                    {winX}
+
+                </div>
+                </div>
         </div>
         </>
     )
