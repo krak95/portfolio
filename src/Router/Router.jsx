@@ -6,6 +6,7 @@ import Shop from "../Zones/Shop/Shop"
 import Calculator from "../Zones/Calculator/Calculator"
 import User from "../Zones/User/User"
 import Ttt from "../Zones/Ttt/Ttt"
+import Chess from "../Zones/Chess/Chess"
 import "./Router.css"
 import { AuthContext, AuthProvider } from "./../API/Controller/login/loginController"
 import RouteAuth from "../Components/topmenu/topMenu"
@@ -49,6 +50,7 @@ return (
 <Link to="/shop">Shop</Link>
 <Link to="/calculator">Calculator</Link>
 <Link to="/tictactoe">Tic-Tac-Toe</Link>
+<Link to="/chess">Chess</Link>
 </div>
 </div>
 <div className="dropdown-div" onMouseEnter={handleDropdownEnter} onMouseLeave={handleDropdownLeave}>
@@ -61,6 +63,7 @@ return (
 <li><Link onClick={handleDropdownLeave} to="/shop">Shop</Link></li>
 <li><Link onClick={handleDropdownLeave} to="/calculator">Calculator</Link></li>
 <li><Link onClick={handleDropdownLeave} to="/calculator">Tic-Tac-Toe</Link></li>
+<li><Link onClick={handleDropdownLeave} to="/chess">Chess</Link></li>
 </ol>
 </div>
 <AuthProvider>
@@ -71,6 +74,7 @@ return (
 <Route exact path="shop" element={<Shop/>}/>
 <Route exact path="calculator" element={<Calculator/>} />
 <Route exact path="tictactoe" element={<Ttt/>} />
+<Route exact path="chess" element={<Chess/>} />
 </Routes>
 </AuthProvider>
 </>

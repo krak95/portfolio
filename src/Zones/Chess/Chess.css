@@ -1,0 +1,105 @@
+@import '../../sass/font/font.scss';
+@import "../../sass/rootcolors/colors.scss";
+.chess-div{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.chessboard{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto auto auto auto;
+    background-color: white;
+    margin-top:50px;
+    border:1px solid rgb(107, 69, 42);
+}
+.chessboard >div{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    padding:4px;
+    border:none;
+    font-size:14px;
+    font-weight: bold;
+    background-color: white;
+    text-align: center;
+    border:1px solid black;
+}
+img{
+    width: 60px;
+    height: 60px;
+}
+.a:nth-child(even){
+    background-color: white;
+}
+.a:nth-child(odd){
+    color:white;
+    background-color: rgb(107, 69, 42);
+}
+.b:nth-child(even){
+    background-color: rgb(107, 69, 42);
+    color:white;
+}
+.b:nth-child(odd){
+    background-color: white;
+    color:rgb(107, 69, 42);
+}
+.c:nth-child(even){
+    background-color: white;
+}
+.c:nth-child(odd){
+    color:white;
+    background-color: rgb(107, 69, 42);
+}
+.d:nth-child(even){
+    background-color: rgb(107, 69, 42);
+    color:white;
+}
+.d:nth-child(odd){
+    background-color: white;
+    color:rgb(107, 69, 42);
+}
+.e:nth-child(even){
+    background-color: white;
+}
+.e:nth-child(odd){
+    color:white;
+    background-color: rgb(107, 69, 42);
+}
+.f:nth-child(even){
+    background-color: rgb(107, 69, 42);
+    color:white;
+}
+.f:nth-child(odd){
+    background-color: white;
+    color:rgb(107, 69, 42);
+}
+.g:nth-child(even){
+    background-color: white;
+}
+.g:nth-child(odd){
+    color:white;
+    background-color: rgb(107, 69, 42);
+}
+.h:nth-child(even){
+    background-color: rgb(107, 69, 42);
+    color:white;
+}
+.h:nth-child(odd){
+    background-color: white;
+    color:rgb(107, 69, 42);
+}
+
+.yes{
+    border:1px solid red;
+    border-radius: 50%;
+    padding:6px;
+}
+
+.chessboard div:hover{
+    background-color: green;
+    opacity: .5;
+    cursor: pointer;
+}
