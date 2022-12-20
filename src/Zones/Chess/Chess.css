@@ -19,79 +19,32 @@
     align-items: center;
     width: 60px;
     height: 60px;
-    padding:4px;
+    padding:10px;
     border:none;
     font-size:14px;
     font-weight: bold;
-    background-color: white;
     text-align: center;
-    border:1px solid black;
 }
 img{
     width: 60px;
     height: 60px;
 }
-.a:nth-child(even){
-    background-color: white;
+.tile div{
+    background-color: var(--light);
+    border-radius: 10px;
+    padding:6px;
+    color:black;
 }
-.a:nth-child(odd){
+.black-tile
+{
     color:white;
-    background-color: rgb(107, 69, 42);
+    background-color: rgb(138, 93, 64);
 }
-.b:nth-child(even){
-    background-color: rgb(107, 69, 42);
-    color:white;
-}
-.b:nth-child(odd){
-    background-color: white;
-    color:rgb(107, 69, 42);
-}
-.c:nth-child(even){
-    background-color: white;
-}
-.c:nth-child(odd){
-    color:white;
-    background-color: rgb(107, 69, 42);
-}
-.d:nth-child(even){
-    background-color: rgb(107, 69, 42);
+.white-tile
+{
+    background-color: whitesmoke;
     color:white;
 }
-.d:nth-child(odd){
-    background-color: white;
-    color:rgb(107, 69, 42);
-}
-.e:nth-child(even){
-    background-color: white;
-}
-.e:nth-child(odd){
-    color:white;
-    background-color: rgb(107, 69, 42);
-}
-.f:nth-child(even){
-    background-color: rgb(107, 69, 42);
-    color:white;
-}
-.f:nth-child(odd){
-    background-color: white;
-    color:rgb(107, 69, 42);
-}
-.g:nth-child(even){
-    background-color: white;
-}
-.g:nth-child(odd){
-    color:white;
-    background-color: rgb(107, 69, 42);
-}
-.h:nth-child(even){
-    background-color: rgb(107, 69, 42);
-    color:white;
-}
-.h:nth-child(odd){
-    background-color: white;
-    color:rgb(107, 69, 42);
-}
-
 .yes{
     border:1px solid red;
     border-radius: 50%;
@@ -102,4 +55,8 @@ img{
     background-color: green;
     opacity: .5;
     cursor: pointer;
+}
+
+.possibleMoves{
+    background-color: var(--green) !important;
 }
