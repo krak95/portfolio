@@ -65,8 +65,11 @@ const pick = (e)=>{
     setPlaystate('play')
 }
 const play = (e) =>{
-    console.log('play')
-    const el = e.target
+    const elplay = e.target
+    const elstored = JSON.parse(localStorage.getItem('picked'))
+    $('[x='+elstored.x+'][y='+elstored.y+']').remove()
+    $('[tile-x='+elplay.x+'][tile-y='+elplay.y+']').append(<Tile onClick={playstate === 'pick' ? pick : play} x={elplay.tilex} y={elplay.tiley} piece={elstored.piece} number={elplay.x + elplay.y + 2} color={elstored.color}/>)
+    console.log(elstored.piece,elstored.color)
     setPlaystate('pick')
 }
     for (let i = 0; i < x.length; i++) {
