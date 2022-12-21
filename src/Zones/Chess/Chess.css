@@ -1,5 +1,8 @@
 @import '../../sass/font/font.scss';
 @import "../../sass/rootcolors/colors.scss";
+*{
+    user-select: none;
+}
 .chess-div{
     display:flex;
     justify-content: center;
@@ -9,7 +12,7 @@
     display: grid;
     grid-template-columns: auto auto auto auto auto auto auto auto;
     grid-template-rows: auto auto auto auto auto auto auto auto;
-    background-color: white;
+    background-color: transparent;
     margin-top:50px;
     border:1px solid rgb(107, 69, 42);
 }
@@ -29,11 +32,16 @@ img{
     width: 60px;
     height: 60px;
 }
-.tile div{
+.tile>div{
     background-color: var(--light);
     border-radius: 10px;
-    padding:12px;
+    width: 60px;
+    height: 60px;
     color:black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
 }
 .black-tile
 {
@@ -50,12 +58,13 @@ img{
     border-radius: 50%;
     padding:6px;
 }
-.chessboard div:hover{
+.tile >div:hover{
     background-color: green;
-    opacity: .5;
     cursor: pointer;
 }
 .possibleMoves{
     box-shadow: inset 0 0 30px green;
-    opacity: .5;
+}
+.piece{
+position: relative !important;
 }

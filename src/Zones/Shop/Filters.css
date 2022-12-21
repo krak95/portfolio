@@ -1,8 +1,5 @@
 @import '../../sass/font/font.scss';
 @import "../../sass/rootcolors/colors.scss";
-*{
-    transition: .3s;
-}
 .filters-div
 {
     height: 100%;
