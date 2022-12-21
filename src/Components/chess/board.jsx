@@ -73,12 +73,35 @@ if(activeP){
     const chessboard = chessboardRef.current
     const stored = JSON.parse(localStorage.getItem('picked'))
     const elpiece = document.querySelector('[piece='+stored.piece+']')
-    const mousex = e.clientX -30
-    const mousey = e.clientY -30
-    elpiece.style.left = `${mousex}px`
-    elpiece.style.top = `${mousey}px`
+    const x = e.clientX -30
+    const y = e.clientY -30
+    const minX = chessboard.offsetLeft
+    const minY = chessboard.offsetTop
+    const maxX = chessboard.offsetLeft + chessboard.clientWidth - 58
+    const maxY = chessboard.offsetTop + chessboard.clientHeight - 58
+    elpiece.style.left = `${x}px`
+    elpiece.style.top = `${y}px`
     elpiece.style.position = 'absolute'
     $('.chessboard div').removeClass('possibleMoves')
+    if(x < minX){
+        activeP.style.left = `${minX}px`
+    }
+    else if(x > maxX){
+        activeP.style.left = `${maxX}px`
+    }
+    else{
+        activeP.style.left = `${x}px`
+    }
+    if(y < minY){
+        activeP.style.top = `${minY}px`
+    }
+    else if(y > maxY){
+        activeP.style.top = `${maxY}px`
+    }
+    else{
+        activeP.style.top = `${y}px`
+    }
+
 }
 }
 
@@ -87,9 +110,9 @@ const drop = (e) =>{
 }
 
 const mousepos = (e) =>{
-    const mousex = e.clientX
-    const mousey = e.clientY
-    console.log(mousex,mousey)
+    const x = e.clientX
+    const y = e.clientY
+    console.log(x,y)
 }
 
     for (let i = 0; i < x.length; i++) {
