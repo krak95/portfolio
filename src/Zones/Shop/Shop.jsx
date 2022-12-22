@@ -58,10 +58,33 @@ const importAll=(r)=> {
     const pagination  = () =>{
         let nritem = $('.grid-item').length
         if(nritem > 8){
+            let itemshown = 8
+            let nrpages = nritem / itemshown
             $('.grid-item').hide()
             $('.grid-item').slice(0, 8).show();
+            for(let i = 0; i < nrpages; i++){
+                let pagenr = i+1
+                $('.pagination').append('<a className="pagination" data-page='+i+'>'+pagenr+'</a>')
+            }
+            $('.pagination a').on('click',function(){
+                let el = this
+                let firstitem = $(el).attr('data-page')
+                let firstslice = firstitem*itemshown
+                let lastitem = firstslice + itemshown
+                $('.grid-item').hide().slice(firstslice, lastitem).show();
+            })
+            
         }
         console.log('pagination')
+        $('.pagination a:first-child').addClass('pageselected')
+        $('.pagination a').on('click',function(){
+            let el = this
+            $('.pagination a').removeClass('pageselected')
+            setTimeout(() => {
+                $(el).addClass('pageselected')
+            }, 1);
+        })
+
     }
 
 useEffect(()=>{
@@ -88,6 +111,8 @@ return (
 </tbody>
 </table>
     </div>
+    <div>
+
     <div className='shop2'>
         {items.map((item) =>(
         <div className='grid-item' key={item.id}>
@@ -98,6 +123,9 @@ return (
         </div>
             ))}
     </div>
+            <div className='pagination'></div>
+    </div>
+
 <CartList cartlist={cartitem} handleClear1={(e) => clearCart(e)}/>
 </div>
 </>
