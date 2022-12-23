@@ -58,10 +58,10 @@ const importAll=(r)=> {
     const pagination  = () =>{
         let nritem = $('.grid-item').length
         if(nritem > 8){
-            let itemshown = 8
+            let itemshown = 12
             let nrpages = nritem / itemshown
             $('.grid-item').hide()
-            $('.grid-item').slice(0, 8).show();
+            $('.grid-item').slice(0, itemshown).show();
             for(let i = 0; i < nrpages; i++){
                 let pagenr = i+1
                 $('.pagination').append('<a className="pagination" data-page='+i+'>'+pagenr+'</a>')

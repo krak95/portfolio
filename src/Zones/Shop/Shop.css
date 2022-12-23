@@ -64,11 +64,12 @@
     background-color: var(--medium);
     border:1px solid black;
     border-radius: 5px;
+    box-shadow: inset 0 0 40px var(--dark);
 }
 .shop-container button:hover
 {
     cursor: pointer;
-    background-color: var(--light);
+    box-shadow: none;
 }
 .shop1
 {
@@ -82,13 +83,38 @@
     margin: 10px;
     margin-top:0;
     border-radius: 10px;
+    background-color: rgb(255, 229, 180);
 }
 .grid-item
 {
-    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0 0 40px var(--dark);
+    background-color: var(--light2);
     padding:10px;
     font-size: 30px;
     text-align: center;
+    border:1px solid var(--dark);
+    margin:10px;
+    border-radius: 10px;
+}
+.grid-item:hover
+{
+    box-shadow: none;
+    padding:10px;
+    font-size: 30px;
+    text-align: center;
+    border:1px solid var(--dark);
+    margin:10px;
+    border-radius: 10px;
+}
+.grid-item div:nth-child(2){
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.grid-item div:nth-child(3){
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 .pagination{
     width: 100%;

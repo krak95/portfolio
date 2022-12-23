@@ -11,7 +11,6 @@ console.log("chessboard",chessboardRef)
 
 const board = [];
 const initialState = [] ;
-useEffect(()=>{
 
     initialState.push({piece:'bltower', color:'black', x:0,y:0})
     initialState.push({piece:'brtower', color:'black', x:0,y:7})
@@ -35,7 +34,6 @@ useEffect(()=>{
     for(let i = 0; i<x.length;i++){
         initialState.push({piece:'wpawn'+[i], color:'white', x:6,y:i})
     }
-},[initialState])
 
 
 const [playstate, setPlaystate] = useState('pick')
