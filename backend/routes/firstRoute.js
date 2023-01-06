@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const First = require('../model/first.model')
+const First = require('../model/login.Model')
 
 router.route('/create').post((req,res)=>{
     console.log('MONGO Route')

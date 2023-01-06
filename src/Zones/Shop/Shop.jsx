@@ -88,8 +88,10 @@ const importAll=(r)=> {
     }
 
 useEffect(()=>{
+    setTimeout(() => {
         pagination()
-})
+    }, 100);
+},[])
 
 return (
 <>

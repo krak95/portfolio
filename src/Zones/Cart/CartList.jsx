@@ -11,7 +11,7 @@ const [cartstate, setCartstate] = useState([])
 
 console.log('cartllist',cartstate)
 useEffect(()=>{
-    setCartstate(cartlist)
+setCartstate(cartlist)
 },[cartlist])
 
 const handlePayment = () =>{
@@ -19,7 +19,7 @@ const handlePayment = () =>{
 }
 
 const opencart =(e)=>{
-    e.stopPropagation();
+e.stopPropagation();
 $('.cart-div').addClass('cart-open')
 $('.cart-div table').addClass('cart-tableopen')
 $('.nrofitems').addClass('cart-nrofitemshide')
@@ -29,7 +29,7 @@ console.log('open')
 }    
 
 const closecart =(e)=>{
-    e.stopPropagation();
+e.stopPropagation();
 $('.cart-div').removeClass('cart-open')
 $('.cart-div table').removeClass('cart-tableopen')
 $('.nrofitems').removeClass('cart-nrofitemshide')

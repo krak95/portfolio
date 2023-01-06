@@ -26,7 +26,6 @@ return <Navigate to = "/login"/>;
 return children;
 };
 const store = localStorage.getItem('uname')
-
 const handleDropdownEnter = () =>{
 $('.dropdown-div').addClass('dropdown-div-show')
 }
