@@ -16,14 +16,14 @@ const userSchema =  new Schema({
     trim: true,
     minlength: 3
     },
-    username: {
+    user: {
     type:String,
     require: true,
     unique: true,
     trim: true,
     minlength: 3
     },
-    password: {
+    pass: {
     type:String,
     require: true,
     trim: true,
@@ -31,6 +31,6 @@ const userSchema =  new Schema({
     }
 })
 
-const User = mongoose.model('Users', userSchema)
+const signupModel = mongoose.model('users', userSchema)
 
-module.exports = User
+module.exports = signupModel

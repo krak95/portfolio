@@ -18,6 +18,6 @@ const userSchema =  new Schema({
     }
 })
 
-const User = mongoose.model('Users', userSchema)
+const SignupMongo = mongoose.model('Users', userSchema)
 
-module.exports = User
+module.exports = SignupMongo

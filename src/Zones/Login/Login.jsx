@@ -41,15 +41,15 @@ function Login() {
       }
   }
 
-  function handleSubmit() {
+  const handleSubmit = async (e) =>{
     const mongoObject = {
       fname: fname,
       email: email,
       username: uname,
       password: pwd,
     };
-    axios.post("http://localhost:5500/create", mongoObject);
-    console.log("created",{fname,email,uname,pwd});
+    const result = await axios.post("http://localhost:5500/create", mongoObject);
+    console.log('create',mongoObject,result)
   }
 
   if (!authenticated) {
