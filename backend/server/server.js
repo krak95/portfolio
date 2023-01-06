@@ -179,7 +179,6 @@ const users = [
 
     app.post('/addCart', (req,res)=>{
         const itemadd = req.body.item       
-        const session = req.body.session
         if(req){
             console.log(itemadd)
             res.send(itemadd)

@@ -43,7 +43,7 @@ return (
 </div>
 <div className="dropdown"><button onClick={handleDropdownEnter} onMouseEnter={handleDropdownEnter} onMouseLeave={handleDropdownLeave}>Menu</button></div>
 <div className='topmenu'>
-<Link to="/">  Home</Link>
+<Link to="/">Home</Link>
 <Link className={store === null ? "login-route show" : "login-route hide"} to="/login"> Login</Link>
 <Link className={store === null ? "user-route hide" : "user-route show"} to="/user"> User</Link>
 <RouteAuth/>
