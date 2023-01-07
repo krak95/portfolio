@@ -40,10 +40,7 @@ app.post("/create", async (req, res) => {
   const password = req.body.password;
   const fname = req.body.fname;
   const email = req.body.email;
-  console.log("create", username,
-  password,
-  fname,
-  email);
+  console.log("create", username, password, fname, email);
   const signup = await db.collection("users").insertOne({
     fname,
     email,
@@ -65,18 +62,29 @@ app.post("/login", async (req, res) => {
 });
 
 app.post("/addItem", async (req, res) => {
-  console.log('additem')
+  console.log("additem");
   const item = req.body.item;
   const price = req.body.price;
   const logValues = await db
     .collection("items")
-    .insertOne({ item: item, price: price });
-    res.send("Success");
+    .insertOne({ todo: 0, item: item, price: price });
+  res.send("Success");
 });
 app.post("/getItems", async (req, res) => {
-  const  logValues = await db
-    .collection("items")
-    .find().toArray();
-    res.send(logValues)
+  const logValues = await db.collection("items").find().toArray();
+  res.send(logValues);
+});
 
+app.post("/updateItem", async (req, res) => {
+  const item = req.body.item;
+  console.log(item)
+  const logValues = await db.collection('items').updateOne(
+    {item:item},
+    {$set: { todo: 1 }}
+);
+    console.log(logValues);
+});
+
+app.post("/dropItems", async (req, res) => {
+  const logValues = await db.collection("items").deleteMany({});
 });

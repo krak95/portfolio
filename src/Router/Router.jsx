@@ -42,7 +42,7 @@ return (
 </div>
 <div className="dropdown"><button onClick={handleDropdownEnter} onMouseEnter={handleDropdownEnter} onMouseLeave={handleDropdownLeave}>Menu</button></div>
 <div className='topmenu'>
-<Link to="/">Home</Link>
+<Link to="/">TODO</Link>
 <Link className={store === null ? "login-route show" : "login-route hide"} to="/login"> Login</Link>
 <Link className={store === null ? "user-route hide" : "user-route show"} to="/user"> User</Link>
 <RouteAuth/>
@@ -56,7 +56,7 @@ return (
   
 <ol>
   <li><div className="close-topmenu" onClick={handleDropdownLeave}>CLOSE</div></li>
-<li><Link onClick={handleDropdownLeave} to="/">  Home</Link></li>
+<li><Link onClick={handleDropdownLeave} to="/">  TODO</Link></li>
 <li><Link onClick={handleDropdownLeave} className={store === null ? "login-route show" : "login-route hide"} to="/login"> Login</Link></li>
 <li><Link onClick={handleDropdownLeave} className={store === null ? "user-route hide" : "user-route show"} to="/user"> User</Link></li>
 <li><Link onClick={handleDropdownLeave} to="/shop">Shop</Link></li>

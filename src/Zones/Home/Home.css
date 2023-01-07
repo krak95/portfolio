@@ -23,12 +23,20 @@
 }
 .listofitems div{
     display:flex;
-    padding:5px;
+    padding:10px;
     align-items: center;
     justify-content: space-around;
     margin:10px;
     border-radius: 5px;
 }
 .listofitems div:hover{
+    cursor: pointer;
     background-color: lightgoldenrodyellow;
+}
+
+.todo{
+    border:red 1px solid
+}
+.done{
+text-decoration: underline 5px greenyellow;
 }
