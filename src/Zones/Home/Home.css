@@ -1,3 +1,5 @@
+@import '../../sass/font/font.scss';
+@import "../../sass/rootcolors/colors.scss";
 .mongoadditem{
     display: flex;
     align-items: center;
@@ -42,4 +44,26 @@
 }
 .done{
 background-color:  greenyellow;
+}
+.t-chat li{
+    font-family: ubuntu-italic;
+    padding:20px;
+}
+.t-chat li>.username{
+    margin-bottom:6px;
+    font-weight: bold;
+}
+.t-chat li:nth-child(even)>p{
+    color:rgb(253, 210, 193);
+}
+.t-chat li:nth-child(odd)>p{
+    color:rgb(223, 37, 37);
+}
+.t-chat li:nth-child(even){
+    
+    background-color: lightcoral;
+}
+.t-chat li:nth-child(odd){
+    
+    background-color: lightsalmon;
 }
