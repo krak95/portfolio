@@ -1,0 +1,34 @@
+.mongoadditem{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.mongoadditem > button{
+    background-color: slateblue;
+    border:none;
+    padding:4px;
+}
+.mongoadditem > button:hover{
+    cursor: pointer;
+    background-color: red;
+}
+.mongoadditem > * {
+    margin: 10px;
+}
+
+.listofitems{
+    padding:10px;
+    background-color: lightsalmon;
+}
+.listofitems div{
+    display:flex;
+    padding:5px;
+    align-items: center;
+    justify-content: space-around;
+    margin:10px;
+    border-radius: 5px;
+}
+.listofitems div:hover{
+    background-color: lightgoldenrodyellow;
+}

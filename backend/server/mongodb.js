@@ -50,7 +50,6 @@ app.post("/create", async (req, res) => {
     username,
     password,
   });
-  console.log("create", signup);
 });
 
 app.post("/login", async (req, res) => {
@@ -63,4 +62,21 @@ app.post("/login", async (req, res) => {
   if (logValues !== null) {
     res.send("Success");
   }
+});
+
+app.post("/addItem", async (req, res) => {
+  console.log('additem')
+  const item = req.body.item;
+  const price = req.body.price;
+  const logValues = await db
+    .collection("items")
+    .insertOne({ item: item, price: price });
+    res.send("Success");
+});
+app.post("/getItems", async (req, res) => {
+  const  logValues = await db
+    .collection("items")
+    .find().toArray();
+    res.send(logValues)
+
 });
