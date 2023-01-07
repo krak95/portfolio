@@ -5,18 +5,6 @@ app.use(cors({ credentials:true, origin:'http://localhost:3000' }));
 app.use(express.json());
 
 
-const users = [
-    {
-        'name':'jose',
-        'pwd':'jose',
-        'cart':[],
-    },
-    {
-        'name':'user1',
-        'pwd':'user1',
-        'cart':[],
-    }
-]
 
 
     app.post('/login',  (req,res)=> {
@@ -26,14 +14,10 @@ const users = [
         const jwt = require('jsonwebtoken')
         require('dotenv').config()
         const accesstoken = jwt.sign(usertoken, process.env.jwToken, {expiresIn: "1120s"})
+        res.send(accesstoken)
         console.log('logintry')
-        if(users.find(user => user.name === runame)  && users.find(user => user.pwd === rpwd) ){
-            console.log('corret')
-            res.send(accesstoken)
-        }else{
-            res.send('')
-        }
-            console.log(runame,rpwd)
+        console.log('corret')
+        console.log(runame,rpwd)
         })
 
     app.post('/verifyToken', (req,res)=>{

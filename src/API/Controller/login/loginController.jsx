@@ -17,12 +17,12 @@ setUser(recoverUser)
 
 const login = async (uname, pwd) => {
 const session = await createSession(uname, pwd);
-const result = session.data;
+const result = session.status;
 console.log('controller',result)
-if(result !== ''){
+if(result === 200){
 localStorage.setItem('uname',uname);
 localStorage.setItem('pwd',pwd);
-localStorage.setItem('token',result);
+localStorage.setItem('token',session.data);
 setUser(uname)
 $('.login-route').addClass('hide').removeClass('show')
 $('.user-route').addClass('show').removeClass('hide')

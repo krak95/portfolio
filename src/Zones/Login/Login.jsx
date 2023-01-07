@@ -37,7 +37,7 @@ function Login() {
       console.log("checkform",result);
       if(result.status === 200){
         login(uname,pwd)
-        console.log('loggedin')
+        console.log('loggedin',uname,pwd)
       }
   }
 

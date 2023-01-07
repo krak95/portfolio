@@ -33,7 +33,6 @@ app.listen(PORT, () => {
   console.log(`RUNNING ON ${PORT}`);
 });
 
-const signupModel = require("../model/signup.Model");
 const db = client.db("firstMongo");
 
 app.post("/create", async (req, res) => {
@@ -41,6 +40,10 @@ app.post("/create", async (req, res) => {
   const password = req.body.password;
   const fname = req.body.fname;
   const email = req.body.email;
+  console.log("create", username,
+  password,
+  fname,
+  email);
   const signup = await db.collection("users").insertOne({
     fname,
     email,
