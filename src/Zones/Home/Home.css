@@ -34,9 +34,12 @@
     background-color: lightgoldenrodyellow;
 }
 
+.listofitems li{
+    border-bottom:1px solid white;
+    display:block;
+}
 .todo{
-    border:red 1px solid
 }
 .done{
-text-decoration: underline 5px greenyellow;
+background-color:  greenyellow;
 }

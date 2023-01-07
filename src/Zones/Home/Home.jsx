@@ -20,6 +20,7 @@ function Home() {
 
   const handleAddItem = async (e) => {
     const mongoObject = {
+      todo: 0,
       item: item,
       price: price,
     };
@@ -41,9 +42,8 @@ const checkTodo = async (e) =>{
     e.stopPropagation()
     let el = e.target.getAttribute('a-key')
     console.log(el)
-    let el2 = e.target
-    $(el2).addClass('done')
-    $(el2).removeClass('todo')
+    $('[a-key='+el+']').addClass('done')
+    $('[a-key='+el+']').removeClass('todo')
     const mongoObject = {
         item: el,
     };
@@ -63,10 +63,9 @@ return (
       <div className="listofitems">
         <ol>
           {items.map((p) => (
-            <li key={p._id}>
-                <div onClick={e=>checkTodo(e)} a-key={p.item} key={p._id}>
-                ITEM:<p onClick={e=>checkTodo(e)} a-key={p.item} key={p._id} className={p.todo === 0 ? 'item-name todo' : 'item-name done'} > {p.item} </p> <p>PRICE:{p.price}</p>
-                </div>
+            <li a-key={p.item} className={p.todo === 0 ? 'item-name todo' : 'item-name done'}  key={p._id}>
+                ITEM:<p> {p.item} </p> <p>PRICE:{p.price}</p>
+                <button a-key={p.item} onClick={e=>checkTodo(e)}  >CHECK</button>
             </li>
           ))}
         </ol>

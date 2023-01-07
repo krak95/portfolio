@@ -65,9 +65,10 @@ app.post("/addItem", async (req, res) => {
   console.log("additem");
   const item = req.body.item;
   const price = req.body.price;
+  const todo = req.body.todo;
   const logValues = await db
     .collection("items")
-    .insertOne({ todo: 0, item: item, price: price });
+    .insertOne({ todo: todo, item: item, price: price });
   res.send("Success");
 });
 app.post("/getItems", async (req, res) => {
